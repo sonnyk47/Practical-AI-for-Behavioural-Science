@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 2: Setup, Plotting, and the LLM Problem-Solving Loop — PSYC4411</title>
+  <title>Week 2 Challenge Lab: Visualising Lifestyle &amp; Mental Health — PSYC4411</title>
 
   <!-- reveal.js core CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -20,28 +20,143 @@
 <div class="reveal">
 <div class="slides">
 
-  <section class="title-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #8B1428 100%)">
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 60px;">
-      <p style="font-size: 1.4em; color: rgba(255,255,255,0.5); margin-bottom: 12px; font-weight: 300;">PSYC4411 — Practical AI for Behavioural Science</p>
-      <p style="font-size: 1.1em; color: rgba(255,255,255,0.4); margin-bottom: 40px; font-weight: 300;">Week 2 — Challenge Lab</p>
-      <h1 style="font-size: 2.4em; color: white; margin-bottom: 40px; line-height: 1.2;">Setup, Plotting, and the LLM Problem-Solving Loop</h1>
-      <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px 48px; margin-top: 20px;">
-        <p style="font-size: 1.3em; color: rgba(255,255,255,0.7); margin: 0;"><i class="ph-bold ph-clock"></i>&ensp;Content coming soon</p>
-        <p style="font-size: 0.9em; color: rgba(255,255,255,0.4); margin-top: 8px;">Materials will be available on 02 March</p>
-      </div>
-      <p style="font-size: 0.85em; color: rgba(255,255,255,0.3); margin-top: 48px;">Prof. Michael Richardson — Macquarie University, 2026</p>
+<!-- ============================================================
+     SLIDE 1: TITLE
+     ============================================================ -->
+<section class="title-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #8B1428 100%)">
+  <div class="course-code">PSYC4411</div>
+  <h1>Challenge Lab: Visualising<br>Lifestyle &amp; Mental Health</h1>
+  <div class="spacer-lg"></div>
+  <p class="subtitle">Week 2 &middot; Semester 1, 2026</p>
+  <p class="subtitle">Current Advances in Psychological Methods &amp; Analyses</p>
+</section>
+
+<!-- ============================================================
+     SLIDE 2: THE CHALLENGE
+     ============================================================ -->
+<section>
+  <h2><i class="ph ph-target"></i> Today's Challenge</h2>
+  <div class="spacer"></div>
+  <ul>
+    <li class="fragment">Create a <strong>multi-panel visualisation</strong> exploring lifestyle factors and mental health in a synthetic dataset (3,000 participants, 44 variables including DASS-21 scores)
+      <ul><li>Sleep, exercise, screen time, social media, caffeine, income &mdash; which matter most?</li></ul>
+    </li>
+    <li class="fragment">Try <strong>two workflows</strong>: Jupyter notebook and Python scripts
+      <ul><li>Neither is "better" &mdash; the point is to try both and form a preference</li></ul>
+    </li>
+    <li class="fragment">Apply the <strong>LLM Problem-Solving Loop</strong> from Week 1
+      <ul><li>Plan first &rarr; then code &rarr; then verify &rarr; then document</li></ul>
+    </li>
+    <li class="fragment">Prepare <strong>1 HTML slide</strong> (~3 min) for next week
+    </li>
+  </ul>
+</section>
+
+<!-- ============================================================
+     SLIDE 3: YOUR AI TOOLKIT
+     ============================================================ -->
+<section>
+  <h2><i class="ph ph-wrench"></i> Your AI Toolkit</h2>
+  <div class="spacer"></div>
+  <p>Use <strong>whatever AI tools you like</strong>. No rules, no restrictions. Here are some options:</p>
+  <div class="spacer-sm"></div>
+  <div class="two-col">
+    <div class="col">
+      <h3><i class="ph ph-code"></i> Inside VS Code</h3>
+      <ul>
+        <li class="fragment"><strong>Chat</strong> &mdash; ask questions, get code snippets, paste them in
+        </li>
+        <li class="fragment"><strong>Edit</strong> &mdash; highlight code, ask the AI to modify it in place
+        </li>
+        <li class="fragment"><strong>Agent</strong> &mdash; let the AI create files, run code, and iterate autonomously
+        </li>
+      </ul>
     </div>
-  </section>
+    <div class="col">
+      <h3><i class="ph ph-globe"></i> Outside VS Code</h3>
+      <ul>
+        <li class="fragment"><strong>Browser chatbots</strong> &mdash; ChatGPT, Claude, Gemini &mdash; copy-paste code back and forth
+        </li>
+        <li class="fragment"><strong>CLI tools</strong> &mdash; Claude Code, Codex &mdash; if you've installed them, go for it
+        </li>
+        <li class="fragment"><strong>Mix and match</strong> &mdash; use different tools for different tasks
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-</div></div>
+<!-- ============================================================
+     SLIDE 4: WHY VS CODE MATTERS
+     ============================================================ -->
+<section>
+  <h2><i class="ph ph-lightbulb"></i> Why Learn VS Code?</h2>
+  <div class="spacer"></div>
+  <ul>
+    <li class="fragment">Browser chatbots are great for questions and quick code &mdash; but you still have to <strong>copy, paste, run, debug</strong> yourself
+    </li>
+    <li class="fragment">VS Code's AI features can <strong>edit your files directly</strong>, run your code, read error messages, and fix problems &mdash; a tighter loop
+    </li>
+    <li class="fragment">Over this semester you'll see how this scales:
+      <div class="spacer-sm"></div>
+      <div style="background: var(--mq-light-grey); border-radius: 12px; padding: 20px 28px; font-size: 0.85em; border-left: 4px solid var(--mq-red);">
+        <strong>LLM &rarr; Code &rarr; Solution</strong><br>
+        Having an AI <em>write and run code</em> to produce a figure, analysis, or document is more powerful and reproducible than asking an AI to generate those outputs directly
+      </div>
+    </li>
+    <li class="fragment">No pressure today &mdash; use whatever feels comfortable. But <strong>getting familiar with VS Code now pays off later</strong>
+    </li>
+  </ul>
+</section>
 
+<!-- ============================================================
+     SLIDE 5: GETTING STARTED
+     ============================================================ -->
+<section>
+  <h2><i class="ph ph-rocket-launch"></i> Getting Started</h2>
+  <div class="spacer"></div>
+  <div class="two-col">
+    <div class="col">
+      <h3>Part 1: Notebook (~45 min)</h3>
+      <ol>
+        <li class="fragment">Open <code>starter.ipynb</code></li>
+        <li class="fragment">Run the setup cells (imports, data loading)</li>
+        <li class="fragment"><strong>Ask the AI to plan</strong> before writing code</li>
+        <li class="fragment">Build your visualisation cell by cell</li>
+        <li class="fragment">Verify, refine, document</li>
+      </ol>
+    </div>
+    <div class="col">
+      <h3>Part 2: Scripts (~45 min)</h3>
+      <ol>
+        <li class="fragment">Ask the AI to create a <code>plan.md</code></li>
+        <li class="fragment">Review and iterate on the plan</li>
+        <li class="fragment">Have the AI create a <code>.py</code> script</li>
+        <li class="fragment">Run it: <code style="font-size: 0.85em;">python your_script.py</code></li>
+        <li class="fragment">Check the PNG, refine, document</li>
+      </ol>
+    </div>
+  </div>
+  <div class="spacer"></div>
+  <p class="fragment" style="text-align: center; font-size: 0.85em; color: var(--mq-grey);">Full details in the challenge brief: <code>weeks/week-02-lab/README.md</code></p>
+</section>
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<!-- reveal.js -->
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
 <script>
   Reveal.initialize({
-    width: 1920, height: 1080, margin: 0,
-    center: false, controls: false,
-    slideNumber: false, progress: false,
-    transition: 'none', hash: false
+    hash: true,
+    slideNumber: 'c/t',
+    width: 1920,
+    height: 1080,
+    margin: 0.04,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    center: false,
+    pdfSeparateFragments: false
   });
 </script>
 </body>
