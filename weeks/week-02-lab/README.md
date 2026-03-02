@@ -24,7 +24,7 @@ The emphasis is on **prompt engineering** — the more context you give your LLM
 
 There are no rules about which AI tools you use for this challenge. Use whatever works for you:
 
-- **Inside VS Code:** Copilot Chat (ask questions, get code), Edit mode (highlight code and ask the AI to change it), or Agent mode (let the AI create files, run code, and iterate on its own)
+- **Inside VS Code:** GitHub Copilot comes built-in, but you can also install the **Gemini Code Assist**, **Claude Code**, and **Codex** (OpenAI) extensions from the VS Code marketplace. Each gives you Chat, Edit, and Agent modes. Gemini works with any Gmail account, and both Gemini and Codex offer a **free usage tier** — so if you hit the limit on one, just switch to another.
 - **Browser chatbots:** ChatGPT, Claude, Gemini — copy and paste code back and forth
 - **CLI tools:** If you've installed Claude Code, Codex, or similar command-line tools, feel free to use them
 - **Mix and match:** Use a browser chatbot for brainstorming and VS Code for writing code — there's no single "right" setup
