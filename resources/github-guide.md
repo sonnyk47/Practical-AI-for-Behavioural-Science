@@ -88,7 +88,67 @@ The course repo is at: **xkiwilabs/Practical-AI-for-Behavioural-Science**
 - **Branch:** A parallel version of the repo. We use `main` for student-facing content. You won't need to create branches.
 - **Commit:** A saved snapshot of changes. Each commit has a message describing what changed.
 - **README.md:** The main information file in any folder. GitHub automatically displays it when you open a folder.
-- **Fork:** Your own copy of someone else's repo. You won't need this for the course.
+- **Fork:** Your own copy of someone else's repo. Optional for this course (see below).
+
+---
+
+## Forking (Optional): Save Your Work to Your Own Repository
+
+You **don't need to fork** for this course — you can just download files. But if you want to keep your work backed up on GitHub, forking is the way to do it.
+
+**A fork is:** A complete copy of the course repo under your own GitHub account. You can edit it, push your changes, and it stays separate from the original course repo (so you can't accidentally overwrite the instructor's files, and vice versa).
+
+### When to fork
+
+- You want to save your lab work, presentations, and analysis code to GitHub (cloud backup)
+- You plan to revisit this code after the course
+- You want a Git-tracked history of your changes
+- You're using **Codespaces and want to push your work** somewhere
+
+### How to fork
+
+1. Go to [github.com/xkiwilabs/Practical-AI-for-Behavioural-Science](https://github.com/xkiwilabs/Practical-AI-for-Behavioural-Science)
+2. Click the **Fork** button (top-right, next to "Star")
+3. GitHub asks where you want to fork it → select your own account
+4. You now have your own copy at `github.com/your-username/Practical-AI-for-Behavioural-Science`
+
+### Cloning your fork (in VS Code or Codespaces)
+
+1. Go to your fork (github.com/your-username/...)
+2. Click the green **Code** button
+3. Copy the HTTPS URL
+4. In VS Code/Codespaces: **Command Palette** (Cmd+Shift+P or Ctrl+Shift+P) → **Git: Clone** → paste the URL
+
+Now you have a local copy you can edit and push back to your fork.
+
+### Keeping your fork up to date with course materials
+
+When I add new course materials each week, you want to pull them into your fork:
+
+1. In the terminal, set the upstream (do this once):
+   ```
+   git remote add upstream https://github.com/xkiwilabs/Practical-AI-for-Behavioural-Science.git
+   ```
+
+2. Each week, fetch updates:
+   ```
+   git fetch upstream
+   git merge upstream/main
+   ```
+
+3. Push to your fork:
+   ```
+   git push
+   ```
+
+Now your fork has the latest course materials **plus** your own work.
+
+### Example workflow (Codespaces + Forking)
+
+1. **Week 1:** Create fork, clone it to Codespaces
+2. **Week 2:** `git pull` to get Week 2 materials, complete lab, save work
+3. **Week 3:** `git push origin main` to back up your work, `git fetch upstream && git merge upstream/main` to get Week 3 materials
+4. **End of course:** All your weekly work is saved in your fork
 
 ---
 

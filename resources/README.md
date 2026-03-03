@@ -7,6 +7,7 @@ Guides, references, and templates to help you through PSYC4411. Everything here 
 ## Getting Set Up
 
 - **[Getting Started guide](../setup/getting-started.md)** — Install Python, Jupyter, VS Code, and set up your LLM assistant (start here)
+- **[GitHub Codespaces guide](codespaces-guide.md)** — Run VS Code in your browser, build Python environment in 2 minutes, no installation needed (recommended if local setup didn't work)
 - **[VS Code guide](vscode-guide.md)** — Navigate the VS Code interface, install extensions, use the terminal and notebooks
 - **[Jupyter Notebooks guide](jupyter-guide.md)** — Cells, kernels, execution order, saving, and common mistakes
 - **[GitHub guide](github-guide.md)** — What GitHub is, creating an account, navigating repos, Student Developer Pack

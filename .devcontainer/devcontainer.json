@@ -1,0 +1,25 @@
+{
+  "name": "PSYC4411",
+  "image": "mcr.microsoft.com/devcontainers/miniconda:0-3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "conda env create -f setup/environment.yml && conda run -n psyc4411 python -m ipykernel install --user --name psyc4411",
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "GitHub.copilot",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/opt/miniconda3/envs/psyc4411/bin/python",
+        "jupyter.kernels.trusted": [
+          "/opt/miniconda3/envs/psyc4411/share/jupyter/kernels/python3"
+        ]
+      }
+    }
+  }
+}

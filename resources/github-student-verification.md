@@ -2,6 +2,8 @@
 
 GitHub sometimes rejects Macquarie University student IDs during the Student Developer Pack application because MQ IDs **do not show an expiry date**. If this has happened to you, don't worry — you can fix it by submitting a supporting enrolment verification letter alongside your ID.
 
+**Still waiting for it to be approved?** Don't stress. You can use **GitHub Codespaces for free** (120 core-hours/month) while approval is pending. And if it gets rejected permanently, Codespaces still works — just use Gemini Code Assist or another free AI tool instead of Copilot. See [Codespaces guide — No Student Developer Pack section](codespaces-guide.md#if-you-dont-have-student-developer-pack-yet-or-it-was-rejected).
+
 ---
 
 ## What You Need

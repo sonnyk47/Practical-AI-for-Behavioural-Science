@@ -46,6 +46,47 @@ His research sits at the intersection of experimental psychology, cognitive scie
 
 ---
 
+## Quick Start: Choose Your Setup
+
+### **Option A: Local Installation (Recommended if it worked for you)**
+
+Follow the [setup guide](setup/getting-started.md) to install Python, VS Code, and course packages on your computer. See [Week 2 troubleshooting](#week-2-setup-troubleshooting) below if you run into issues.
+
+### **Option B: GitHub Codespaces (Fast, no installation needed) ⭐**
+
+If you couldn't get Python/VS Code working on your laptop, use **GitHub Codespaces** — VS Code runs in your browser, all dependencies are pre-configured, and you pay nothing.
+
+**Setup in 3 steps:**
+
+1. Go to this repository (you're already here)
+2. Click the green **Code** button (top-right) → **Codespaces** → **Create codespace on main**
+3. Wait 2–3 minutes. VS Code opens in your browser with everything ready to go. Click the Python kernel dropdown (top-right) and select **psyc4411** if prompted.
+
+That's it. You can now:
+- Open Jupyter notebooks (`.ipynb` files)
+- Write and run Python code
+- Save work to GitHub automatically
+- **Use GitHub Copilot** (optional, only if you have Student Developer Pack approval — but free alternatives exist if you don't)
+
+**Does Codespaces cost?** No, it's free. Codespaces gives everyone **120 free core-hours per month**, regardless of Student Developer Pack status. This course uses ~2–4 hours/week. You stay well under the limit. [How pricing works →](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces)
+
+**No Student Developer Pack yet?** Don't worry. Codespaces works perfectly without it. You'll just use a free AI tool (like Gemini Code Assist) instead of Copilot. See the [Codespaces guide](resources/codespaces-guide.md#if-you-dont-have-student-developer-pack-yet-or-it-was-rejected) for details.
+
+For full setup details, see the [Codespaces guide](resources/codespaces-guide.md).
+
+---
+
+## Week 2: Setup Troubleshooting
+
+Struggled with local setup in Week 2? You're not alone — and there are solutions:
+
+- **Can't install Miniconda?** → Use Codespaces (Option B above)
+- **VS Code won't find Python?** → Use Codespaces, or restart your terminal after installation
+- **Jupyter notebooks don't work?** → Use Codespaces (it's pre-configured)
+- **Got it working on one laptop but visiting another?** → Use Codespaces
+
+---
+
 ## Weekly Materials
 
 Materials are released on the Monday of each class week. The dates below show when each topic goes live — by the end of semester, all weeks will be available here.
