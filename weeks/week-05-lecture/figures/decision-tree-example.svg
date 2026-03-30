@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" font-family="Inter, -apple-system, sans-serif">
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-size="16" font-weight="700" fill="#2D2D2D">Decision Tree: Predicting Elevated Depression</text>
+
+  <!-- Root node -->
+  <rect x="230" y="45" width="240" height="50" rx="10" fill="#4A90D9" fill-opacity="0.15" stroke="#4A90D9" stroke-width="2"/>
+  <text x="350" y="68" text-anchor="middle" font-size="13" font-weight="600" fill="#4A90D9">Negative Affect > 18.5?</text>
+  <text x="350" y="84" text-anchor="middle" font-size="10" fill="#8C8C8C">(PANAS negative mood average)</text>
+
+  <!-- Branches from root -->
+  <line x1="290" y1="95" x2="170" y2="145" stroke="#5BA55B" stroke-width="2"/>
+  <text x="215" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="#5BA55B">No</text>
+  <line x1="410" y1="95" x2="530" y2="145" stroke="#A71930" stroke-width="2"/>
+  <text x="485" y="118" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">Yes</text>
+
+  <!-- Left child: stress coping -->
+  <rect x="60" y="145" width="220" height="50" rx="10" fill="#C8972C" fill-opacity="0.15" stroke="#C8972C" stroke-width="2"/>
+  <text x="170" y="168" text-anchor="middle" font-size="13" font-weight="600" fill="#C8972C">Stress Coping > 4.2?</text>
+  <text x="170" y="184" text-anchor="middle" font-size="10" fill="#8C8C8C">(1=poor ... 7=excellent)</text>
+
+  <!-- Right child: GAD-7 -->
+  <rect x="420" y="145" width="220" height="50" rx="10" fill="#C8972C" fill-opacity="0.15" stroke="#C8972C" stroke-width="2"/>
+  <text x="530" y="168" text-anchor="middle" font-size="13" font-weight="600" fill="#C8972C">GAD-7 Total > 8?</text>
+  <text x="530" y="184" text-anchor="middle" font-size="10" fill="#8C8C8C">(anxiety severity)</text>
+
+  <!-- Left-left branch: Minimal -->
+  <line x1="120" y1="195" x2="75" y2="255" stroke="#5BA55B" stroke-width="2"/>
+  <text x="85" y="228" text-anchor="middle" font-size="11" font-weight="600" fill="#5BA55B">Yes</text>
+
+  <!-- Left-left leaf -->
+  <rect x="15" y="255" width="120" height="55" rx="10" fill="#4A90D9" fill-opacity="0.2" stroke="#4A90D9" stroke-width="2"/>
+  <text x="75" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="#4A90D9">Minimal</text>
+  <text x="75" y="298" text-anchor="middle" font-size="10" fill="#8C8C8C">68% of group</text>
+
+  <!-- Left-right branch: Check sleep -->
+  <line x1="220" y1="195" x2="265" y2="255" stroke="#A71930" stroke-width="2"/>
+  <text x="255" y="228" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">No</text>
+
+  <!-- Left-right node: sleep -->
+  <rect x="175" y="255" width="180" height="50" rx="10" fill="#7B68A8" fill-opacity="0.15" stroke="#7B68A8" stroke-width="2"/>
+  <text x="265" y="278" text-anchor="middle" font-size="13" font-weight="600" fill="#7B68A8">Sleep Latency > 25 min?</text>
+
+  <!-- Left-right-left leaf -->
+  <line x1="225" y1="305" x2="195" y2="345" stroke="#5BA55B" stroke-width="2"/>
+  <text x="198" y="328" text-anchor="middle" font-size="11" font-weight="600" fill="#5BA55B">No</text>
+  <rect x="140" y="345" width="110" height="50" rx="10" fill="#4A90D9" fill-opacity="0.2" stroke="#4A90D9" stroke-width="2"/>
+  <text x="195" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="#4A90D9">Minimal</text>
+  <text x="195" y="386" text-anchor="middle" font-size="10" fill="#8C8C8C">55% of group</text>
+
+  <!-- Left-right-right leaf -->
+  <line x1="305" y1="305" x2="335" y2="345" stroke="#A71930" stroke-width="2"/>
+  <text x="330" y="328" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">Yes</text>
+  <rect x="280" y="345" width="110" height="50" rx="10" fill="#A71930" fill-opacity="0.2" stroke="#A71930" stroke-width="2"/>
+  <text x="335" y="368" text-anchor="middle" font-size="12" font-weight="700" fill="#A71930">Elevated</text>
+  <text x="335" y="386" text-anchor="middle" font-size="10" fill="#8C8C8C">62% of group</text>
+
+  <!-- Right-left branch -->
+  <line x1="480" y1="195" x2="460" y2="255" stroke="#5BA55B" stroke-width="2"/>
+  <text x="460" y="228" text-anchor="middle" font-size="11" font-weight="600" fill="#5BA55B">No</text>
+
+  <!-- Right-left leaf -->
+  <rect x="400" y="255" width="120" height="55" rx="10" fill="#A71930" fill-opacity="0.2" stroke="#A71930" stroke-width="2"/>
+  <text x="460" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="#A71930">Elevated</text>
+  <text x="460" y="298" text-anchor="middle" font-size="10" fill="#8C8C8C">71% of group</text>
+
+  <!-- Right-right branch -->
+  <line x1="580" y1="195" x2="610" y2="255" stroke="#A71930" stroke-width="2"/>
+  <text x="608" y="228" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">Yes</text>
+
+  <!-- Right-right leaf -->
+  <rect x="550" y="255" width="120" height="55" rx="10" fill="#A71930" fill-opacity="0.3" stroke="#A71930" stroke-width="2"/>
+  <text x="610" y="278" text-anchor="middle" font-size="13" font-weight="700" fill="#A71930">Elevated</text>
+  <text x="610" y="298" text-anchor="middle" font-size="10" fill="#8C8C8C">89% of group</text>
+</svg>

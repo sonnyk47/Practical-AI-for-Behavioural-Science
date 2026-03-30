@@ -6,7 +6,7 @@ Create a beautiful, multi-panel visualisation that explores the relationships be
 
 This is a group challenge. You'll work together during class and prepare a 1-slide, ~3-minute presentation for Week 3.
 
-> **Note:** This is practice for creating HTML slides and presenting your work. The formal Paper Presentation assessment (20% of your grade) starts in Week 4 and is about a research paper you choose, not a lab challenge. See [assessments/presentation.md](../../assessments/presentation.md) for details.
+> **Note:** This is practice for creating HTML slides and presenting your work. The formal Paper Presentation assessment (25% of your grade) starts in Week 4 and is about a research paper you choose, not a lab challenge. See [assessments/presentation.md](../../assessments/presentation.md) for details.
 
 ## Background
 

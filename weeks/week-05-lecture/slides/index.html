@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 5: Prediction with Accountability: Classification, Uncertainty, and Evaluation — PSYC4411</title>
+  <title>Week 5: Prediction with Accountability — Classification — PSYC4411</title>
 
   <!-- reveal.js core CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -15,33 +15,1112 @@
 
   <!-- MQ custom theme -->
   <link rel="stylesheet" href="css/mq-theme.css">
+
+  <!-- Week 5 specific styles -->
+  <style>
+    /* Confusion matrix grid */
+    .cm-grid {
+      display: grid;
+      grid-template-columns: auto 1fr 1fr;
+      grid-template-rows: auto 1fr 1fr;
+      gap: 6px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cm-header {
+      padding: 18px 30px;
+      font-weight: 700;
+      font-size: 1.0em;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cm-cell {
+      padding: 40px 30px;
+      border-radius: 14px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.0em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .cm-cell .cm-label { font-size: 1.15em; font-weight: 700; }
+    .cm-cell .cm-desc { font-size: 0.85em; font-weight: 400; opacity: 0.8; }
+    .cm-tp { background: rgba(91,165,91,0.15); color: var(--mq-green); border: 2px solid var(--mq-green); }
+    .cm-fp { background: rgba(232,135,61,0.15); color: var(--mq-orange); border: 2px solid var(--mq-orange); }
+    .cm-fn { background: rgba(167,25,48,0.15); color: var(--mq-red); border: 2px solid var(--mq-red); }
+    .cm-tn { background: rgba(74,144,217,0.15); color: var(--mq-blue); border: 2px solid var(--mq-blue); }
+
+    /* Sigmoid curve */
+    .sigmoid-container { text-align: center; margin: 10px 0; }
+
+    /* Metric cards */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 900px;
+    }
+    .metric-card {
+      background: var(--mq-light-grey);
+      border-radius: 10px;
+      padding: 16px 20px;
+      border-left: 4px solid var(--mq-blue);
+    }
+    .metric-card h4 {
+      font-size: 0.85em;
+      color: var(--mq-charcoal);
+      text-transform: none;
+      letter-spacing: 0;
+      margin-bottom: 4px;
+    }
+    .metric-card p {
+      font-size: 0.72em;
+      margin-bottom: 0;
+      color: var(--mq-grey);
+    }
+
+    /* ROC curve container */
+    .roc-container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+    }
+
+    /* Tree diagram */
+    .tree-node {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.8em;
+      text-align: center;
+    }
+    .tree-container {
+      text-align: center;
+    }
+
+    /* Threshold slider */
+    .threshold-demo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Forest diagram */
+    .forest-grid {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      align-items: flex-end;
+      flex-wrap: nowrap;
+    }
+    .forest-tree {
+      background: var(--mq-light-grey);
+      border-radius: 10px;
+      padding: 12px 18px;
+      text-align: center;
+      font-size: 0.75em;
+      border: 2px solid transparent;
+      min-width: 100px;
+    }
+
+    /* Comparison boxes for regression vs classification */
+    .compare-boxes {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      align-items: center;
+      max-width: 900px;
+    }
+    .compare-box-item {
+      background: var(--mq-light-grey);
+      border-radius: 12px;
+      padding: 20px 24px;
+      text-align: center;
+    }
+
+    /* Fairness examples */
+    .case-study {
+      background: rgba(167, 25, 48, 0.06);
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin: 8px 0;
+      border-left: 4px solid var(--mq-red);
+    }
+    .case-study h4 {
+      color: var(--mq-red);
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
 
-  <section class="title-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #8B1428 100%)">
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 60px;">
-      <p style="font-size: 1.4em; color: rgba(255,255,255,0.5); margin-bottom: 12px; font-weight: 300;">PSYC4411 — Practical AI for Behavioural Science</p>
-      <p style="font-size: 1.1em; color: rgba(255,255,255,0.4); margin-bottom: 40px; font-weight: 300;">Week 5 — Lecture</p>
-      <h1 style="font-size: 2.4em; color: white; margin-bottom: 40px; line-height: 1.2;">Prediction with Accountability: Classification, Uncertainty, and Evaluation</h1>
-      <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px 48px; margin-top: 20px;">
-        <p style="font-size: 1.3em; color: rgba(255,255,255,0.7); margin: 0;"><i class="ph-bold ph-clock"></i>&ensp;Content coming soon</p>
-        <p style="font-size: 0.9em; color: rgba(255,255,255,0.4); margin-top: 8px;">Materials will be available on 23 March</p>
-      </div>
-      <p style="font-size: 0.85em; color: rgba(255,255,255,0.3); margin-top: 48px;">Prof. Michael Richardson — Macquarie University, 2026</p>
+<!-- ============================================================
+     SLIDE 1: Title Slide
+     ============================================================ -->
+<section class="title-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #A71930 100%)">
+  <div class="course-code">PSYC4411</div>
+  <h1>Prediction with Accountability</h1>
+  <h2>Classification, Uncertainty, and Evaluation</h2>
+  <div class="spacer-lg"></div>
+  <p class="subtitle">Week 5 &middot; Semester 1, 2026</p>
+</section>
+
+<!-- ============================================================
+     SLIDE 2: Agenda
+     ============================================================ -->
+<section>
+  <h2>Today's Plan</h2>
+  <div class="spacer"></div>
+  <ol>
+ <li>From regression to classification &mdash; the conceptual shift</li>
+ <li>Logistic regression &mdash; probabilities, not just labels</li>
+ <li>The confusion matrix &mdash; four types of prediction</li>
+ <li>Classification metrics &mdash; beyond accuracy</li>
+ <li>Decision thresholds &mdash; 0.5 is a choice, not a law</li>
+ <li>Decision trees and random forests &mdash; interpretable models</li>
+ <li>Fairness and ethics &mdash; when algorithms affect people</li>
+ <li>Getting ready for Week 6</li>
+  </ol>
+</section>
+
+<!-- ============================================================
+     SECTION 1: FROM REGRESSION TO CLASSIFICATION  (Slides 3–5)
+     ============================================================ -->
+
+<!-- Slide 3: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-swap"></i></div>
+  <h2>From Regression to Classification</h2>
+  <p>Numbers to categories</p>
+</section>
+
+<!-- Slide 4: The Conceptual Shift -->
+<section>
+  <h2>The Shift: Numbers &rarr; Categories</h2>
+  <div class="spacer"></div>
+ <div class="compare-boxes">
+    <div class="compare-box-item" style="border: 2px solid var(--mq-blue);">
+      <h3 style="color: var(--mq-blue);">Regression</h3>
+      <p>Predict a <strong>number</strong></p>
+      <p class="small">&ldquo;Depression score = 14.3&rdquo;</p>
+      <p class="small">Metric: How far off? (MAE, R&sup2;)</p>
     </div>
-  </section>
+    <div style="font-size: 2em; color: var(--mq-grey);">&rarr;</div>
+    <div class="compare-box-item" style="border: 2px solid var(--mq-red);">
+      <h3 style="color: var(--mq-red);">Classification</h3>
+      <p>Predict a <strong>category</strong></p>
+      <p class="small">&ldquo;Elevated depression: Yes/No&rdquo;</p>
+      <p class="small">Metric: Which errors? (more complex)</p>
+    </div>
+  </div>
+  <div class="spacer-lg"></div>
+ <div class="key-insight">
+    <p>When you classify people, the <strong>type</strong> of mistake matters as much as the <strong>number</strong> of mistakes.</p>
+  </div>
+</section>
 
-</div></div>
+<!-- Slide 5: Binary Classification -->
+<section>
+  <h2>Binary Classification</h2>
+  <div class="spacer"></div>
+  <ul>
+ <li>Target has exactly <strong>two values</strong> &mdash; typically coded as 0 and 1</li>
+ <li>In psychology, this is everywhere:
+      <ul>
+        <li>Clinical diagnosis: yes / no</li>
+        <li>Treatment response: responder / non-responder</li>
+        <li>Risk assessment: at-risk / low-risk</li>
+        <li>Dropout prediction: stays / leaves</li>
+      </ul>
+    </li>
+ <li>You already know this from <strong>logistic regression</strong> in statistics
+      <ul><li>The difference: ML focuses on <em>prediction accuracy</em>, not <em>significance testing</em></li></ul>
+    </li>
+  </ul>
+  <div class="spacer"></div>
+ <div class="info-box">
+    <p><strong>Week 6 target:</strong> Classify participants as having <strong>elevated depression</strong> (PHQ-9 &ge; 5) vs <strong>minimal symptoms</strong> (PHQ-9 &lt; 5) using real COVID-era survey data.</p>
+  </div>
+</section>
 
+<!-- ============================================================
+     SECTION 2: LOGISTIC REGRESSION  (Slides 6–9)
+     ============================================================ -->
+
+<!-- Slide 6: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-wave-sine"></i></div>
+  <h2>Logistic Regression</h2>
+  <p>Probabilities, not just labels</p>
+</section>
+
+<!-- Slide 7: Sigmoid -->
+<section>
+  <h2>The Sigmoid Function</h2>
+  <div class="spacer"></div>
+ <p>Linear regression draws a <strong>straight line</strong>. Logistic regression fits an <strong>S-shaped curve</strong>.</p>
+  <div class="spacer"></div>
+
+  <!-- Sigmoid curve figure -->
+ <div class="sigmoid-container" style="text-align: center;">
+    <img src="../figures/sigmoid.png" alt="Sigmoid function showing S-shaped curve mapping features to probability, with 0.5 threshold line" style="max-width: 80%; max-height: 520px; border-radius: 6px;">
+  </div>
+
+  <div class="spacer"></div>
+ <p>The curve squashes any input to a value between 0 and 1 &mdash; we interpret this as a <strong>probability</strong>.</p>
+</section>
+
+<!-- Slide 8: Probability output -->
+<section>
+  <h2>Probability, Then Decision</h2>
+  <div class="spacer"></div>
+  <ul>
+ <li>The model outputs: <strong>&ldquo;73% probability of elevated depression&rdquo;</strong>
+      <ul><li>Not just &ldquo;elevated&rdquo; or &ldquo;not elevated&rdquo;</li></ul>
+    </li>
+ <li>We choose a <strong>decision boundary</strong> &mdash; typically 0.5
+      <ul><li>Above 0.5 &rarr; classify as &ldquo;elevated&rdquo;</li>
+      <li>Below 0.5 &rarr; classify as &ldquo;minimal&rdquo;</li></ul>
+    </li>
+ <li>This threshold is a <strong>choice</strong>, not a law &mdash; more on this soon</li>
+  </ul>
+  <div class="spacer-lg"></div>
+ <div class="key-insight">
+    <p>The probability output is powerful: it lets us adjust <strong>how cautious</strong> the model is.</p>
+  </div>
+</section>
+
+<!-- Slide 9: Stats connection -->
+<section>
+  <h2>Stats Connection</h2>
+  <div class="spacer"></div>
+ <p>Logistic regression has been a <strong>workhorse of behavioural research</strong> for decades.</p>
+  <div class="spacer"></div>
+  <div class="two-col">
+ <div class="col">
+      <h3 style="color: var(--mq-blue);">In Statistics</h3>
+      <ul>
+        <li>&ldquo;Is this predictor <strong>significant</strong>?&rdquo;</li>
+        <li>Focus on p-values, odds ratios</li>
+        <li>Explain relationships</li>
+      </ul>
+    </div>
+ <div class="col">
+      <h3 style="color: var(--mq-red);">In ML</h3>
+      <ul>
+        <li>&ldquo;Can the model <strong>correctly identify</strong> who belongs to each group?&rdquo;</li>
+        <li>Focus on accuracy, precision, recall</li>
+        <li>Predict new cases</li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer"></div>
+ <p class="small">Same model, different goals. ML asks: &ldquo;How well does it work on <em>new</em> data?&rdquo;</p>
+</section>
+
+<!-- ============================================================
+     SECTION 3: CONFUSION MATRIX  (Slides 10–13)
+     ============================================================ -->
+
+<!-- Slide 10: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-grid-four"></i></div>
+  <h2>The Confusion Matrix</h2>
+  <p>Four types of prediction</p>
+</section>
+
+<!-- Slide 11: The Confusion Matrix (merged with screening example) -->
+<section>
+  <h2>The Confusion Matrix</h2>
+  <div class="spacer"></div>
+
+  <div class="cm-grid">
+    <!-- Corner -->
+    <div class="cm-header"></div>
+    <!-- Column headers -->
+    <div class="cm-header" style="color: var(--mq-charcoal);">Actually <strong>Elevated</strong></div>
+    <div class="cm-header" style="color: var(--mq-charcoal);">Actually <strong>Minimal</strong></div>
+
+    <!-- Row 1 -->
+    <div class="cm-header" style="color: var(--mq-charcoal);">Predicted <strong>Elevated</strong></div>
+    <div class="cm-cell cm-tp">
+      <span class="cm-label"><i class="ph ph-check-circle"></i> True Positive</span>
+      <span class="cm-desc">Has depression, model catches it &rarr; referred for support</span>
+    </div>
+    <div class="cm-cell cm-fp">
+      <span class="cm-label"><i class="ph ph-flag"></i> False Positive</span>
+      <span class="cm-desc">Actually fine, model flags them &rarr; unnecessary follow-up</span>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="cm-header" style="color: var(--mq-charcoal);">Predicted <strong>Minimal</strong></div>
+    <div class="cm-cell cm-fn">
+      <span class="cm-label"><i class="ph ph-warning"></i> False Negative</span>
+      <span class="cm-desc">Has depression, model misses it &rarr; no support offered</span>
+    </div>
+    <div class="cm-cell cm-tn">
+      <span class="cm-label"><i class="ph ph-check"></i> True Negative</span>
+      <span class="cm-desc">Actually fine, model agrees &rarr; correctly ruled out</span>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="highlight-box">
+    <p>In screening, <strong>false negatives</strong> are usually the more dangerous error &mdash; we miss someone who needs help.</p>
+  </div>
+</section>
+
+<!-- Slide 12b: Actual confusion matrix from code output -->
+<section>
+  <h2>What This Looks Like in Code</h2>
+  <div class="spacer"></div>
+  <p>Here's a real confusion matrix from Python &mdash; this is what you'll produce in Week 6:</p>
+  <div class="spacer"></div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;">
+    <div style="text-align: center;">
+      <img src="../figures/confusion-matrix-example.png" alt="Confusion matrix heatmap from seaborn showing 82 TP, 14 FP, 18 FN, 86 TN" style="max-width: 100%; max-height: 560px; border-radius: 6px;">
+    </div>
+    <div>
+      <ul>
+ <li><strong>Top-left (86):</strong> Correctly identified as minimal (True Negative)</li>
+ <li><strong>Top-right (14):</strong> Flagged as elevated but actually minimal (False Positive)</li>
+ <li><strong>Bottom-left (18):</strong> Missed &mdash; actually elevated but predicted minimal (False Negative)</li>
+ <li><strong>Bottom-right (82):</strong> Correctly identified as elevated (True Positive)</li>
+      </ul>
+      <div class="spacer"></div>
+ <div class="highlight-box">
+        <p><strong>18 missed cases</strong> &mdash; people with elevated depression that the model didn't catch. Are you comfortable with that?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 13: Think About It #1 -->
+<section class="think-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 100%)">
+  <h2><i class="ph-bold ph-lightbulb"></i> Think About It</h2>
+  <div class="spacer-lg"></div>
+  <p>Imagine two depression screening tools for a university:</p>
+  <div class="spacer"></div>
+  <p><strong>Tool A:</strong> Catches 95% of students with elevated depression, but flags 40% of students who are fine.</p>
+  <div class="spacer"></div>
+  <p><strong>Tool B:</strong> Catches 70% of students with elevated depression, but rarely flags anyone incorrectly.</p>
+  <div class="spacer"></div>
+  <p>Which would you choose for a walk-in counselling service?<br>What about for emergency crisis detection?</p>
+</section>
+
+<!-- ============================================================
+     SECTION 4: CLASSIFICATION METRICS  (Slides 14–19)
+     ============================================================ -->
+
+<!-- Slide 14: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-chart-bar"></i></div>
+  <h2>Classification Metrics</h2>
+  <p>Beyond accuracy</p>
+</section>
+
+<!-- Slide 15: The Accuracy Trap -->
+<section>
+  <h2>The Accuracy Trap</h2>
+  <div class="spacer"></div>
+ <p><strong>Accuracy</strong> = proportion of predictions that were correct. Seems like the obvious metric.</p>
+  <div class="spacer"></div>
+ <div class="highlight-box">
+    <p><strong>The trap:</strong> Imagine 95% of your sample does <em>not</em> have elevated depression. A model that predicts &ldquo;not elevated&rdquo; for <strong>everyone</strong> achieves 95% accuracy &mdash; without learning anything.</p>
+  </div>
+  <div class="spacer"></div>
+  <ul>
+ <li>This is the <strong>majority-class baseline</strong> &mdash; always guess the more common class</li>
+ <li>Any model must beat this to prove it's actually learning</li>
+ <li>Our Week 6 data is nearly balanced (54.5% elevated) &mdash; so baseline accuracy &asymp; 54.5%</li>
+  </ul>
+  <div class="spacer"></div>
+ <div class="info-box">
+    <p><strong>Class imbalance</strong> makes accuracy even more misleading &mdash; when classes are skewed, always report F1 or AUC alongside accuracy.</p>
+  </div>
+</section>
+
+<!-- Slide 16: Core Metrics -->
+<section>
+  <h2>The Core Metrics</h2>
+  <div class="spacer"></div>
+  <div class="metric-grid">
+ <div class="metric-card" style="border-left-color: var(--mq-green);">
+      <h4><i class="ph ph-target"></i> Precision</h4>
+      <p>Of everyone flagged as elevated, how many actually were?<br><strong>High precision = few false alarms</strong></p>
+    </div>
+ <div class="metric-card" style="border-left-color: var(--mq-red);">
+      <h4><i class="ph ph-magnifying-glass"></i> Recall (Sensitivity)</h4>
+      <p>Of everyone who actually had elevated depression, how many did we catch?<br><strong>High recall = few missed cases</strong></p>
+    </div>
+ <div class="metric-card" style="border-left-color: var(--mq-purple);">
+      <h4><i class="ph ph-scales"></i> F1 Score</h4>
+      <p>Harmonic mean of precision and recall &mdash; a single number that balances both.</p>
+    </div>
+ <div class="metric-card" style="border-left-color: var(--mq-blue);">
+      <h4><i class="ph ph-shield-check"></i> Specificity</h4>
+      <p>Of everyone who was actually minimal, how many did we correctly identify?<br>The mirror image of recall.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 17: Precision vs Recall tension -->
+<section>
+  <h2>The Precision&ndash;Recall Trade-off</h2>
+  <div class="spacer"></div>
+  <div class="two-col">
+ <div class="col">
+      <div style="background: rgba(91,165,91,0.1); border: 2px solid var(--mq-green); border-radius: 12px; padding: 20px; text-align: center;">
+        <h3 style="color: var(--mq-green);">High Precision</h3>
+        <p>When you flag someone, you're almost always right</p>
+        <p class="small">But you might miss people who need help</p>
+      </div>
+    </div>
+ <div class="col">
+      <div style="background: rgba(167,25,48,0.1); border: 2px solid var(--mq-red); border-radius: 12px; padding: 20px; text-align: center;">
+        <h3 style="color: var(--mq-red);">High Recall</h3>
+        <p>You catch almost everyone who needs help</p>
+        <p class="small">But you also flag many who are fine</p>
+      </div>
+    </div>
+  </div>
+  <div class="spacer-lg"></div>
+ <div class="key-insight">
+    <p>You can't maximise both at once &mdash; making the model more aggressive at catching cases inevitably increases false alarms.</p>
+  </div>
+</section>
+
+<!-- Slide 18: ROC Curve -->
+<section>
+  <h2>ROC Curve and AUC</h2>
+  <div class="spacer"></div>
+  <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: center;">
+    <div style="text-align: center;">
+      <img src="../figures/roc-curve.png" alt="ROC curve showing our model (AUC=0.91) between perfect (1.0) and random (0.5) reference lines" style="max-width: 100%; max-height: 620px; border-radius: 6px;">
+    </div>
+    <div>
+      <ul>
+ <li><strong>ROC curve</strong> = recall vs false positive rate at <em>every</em> threshold</li>
+ <li><strong>AUC</strong> = area under that curve
+          <ul>
+            <li>Perfect model: AUC = 1.0 (green dashed)</li>
+            <li>Random guessing: AUC = 0.5 (grey dashed)</li>
+          </ul>
+        </li>
+ <li>Evaluates the model <strong>across all thresholds</strong> at once</li>
+ <li><strong>Interpretation:</strong> &ldquo;If I pick one elevated and one minimal person at random, how often does the model rank the elevated person higher?&rdquo;</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: DECISION THRESHOLDS  (Slides 20–23)
+     ============================================================ -->
+
+<!-- Slide 20: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-sliders"></i></div>
+  <h2>Decision Thresholds</h2>
+  <p>0.5 is a choice, not a law</p>
+</section>
+
+<!-- Slide 21: Threshold concept -->
+<section>
+  <h2>The Threshold Is a Choice</h2>
+  <div class="spacer"></div>
+ <p>Most classifiers output a <strong>probability</strong>. The threshold for converting that to a label is <strong>your decision</strong>.</p>
+  <div class="spacer"></div>
+ <div class="three-col">
+    <div class="col">
+      <div style="background: rgba(91,165,91,0.1); border: 2px solid var(--mq-green); border-radius: 12px; padding: 18px; text-align: center;">
+        <h4 style="color: var(--mq-green); text-transform: none; letter-spacing: 0;">Low (0.3)</h4>
+        <p style="font-size: 0.75em;">Cast a <strong>wider net</strong><br>More true positives<br>More false alarms</p>
+      </div>
+    </div>
+    <div class="col">
+      <div style="background: rgba(200,151,44,0.1); border: 2px solid var(--mq-gold); border-radius: 12px; padding: 18px; text-align: center;">
+        <h4 style="color: var(--mq-gold); text-transform: none; letter-spacing: 0;">Default (0.5)</h4>
+        <p style="font-size: 0.75em;">Balanced approach<br>Equal treatment<br>of both errors</p>
+      </div>
+    </div>
+    <div class="col">
+      <div style="background: rgba(167,25,48,0.1); border: 2px solid var(--mq-red); border-radius: 12px; padding: 18px; text-align: center;">
+        <h4 style="color: var(--mq-red); text-transform: none; letter-spacing: 0;">High (0.7)</h4>
+        <p style="font-size: 0.75em;">More <strong>conservative</strong><br>Fewer false alarms<br>More missed cases</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 22: Costs of errors -->
+<section>
+  <h2>Costs of Different Errors</h2>
+  <div class="spacer"></div>
+  <div class="two-col">
+ <div class="col">
+      <div class="highlight-box" style="border-left-color: var(--mq-green);">
+        <h4 style="color: var(--mq-green); text-transform: none; letter-spacing: 0;"><i class="ph ph-magnifying-glass"></i> Screening Programme</h4>
+        <p>Missing someone who needs help is <strong>worse</strong> than a false alarm.</p>
+        <p class="small">&rarr; Lower the threshold (e.g., 0.3)</p>
+        <p class="small">&rarr; Prioritise <strong>recall</strong></p>
+      </div>
+    </div>
+ <div class="col">
+      <div class="highlight-box" style="border-left-color: var(--mq-red);">
+        <h4 style="color: var(--mq-red); text-transform: none; letter-spacing: 0;"><i class="ph ph-flask"></i> Clinical Trial Selection</h4>
+        <p>False positives <strong>waste expensive resources</strong>.</p>
+        <p class="small">&rarr; Raise the threshold (e.g., 0.7)</p>
+        <p class="small">&rarr; Prioritise <strong>precision</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="spacer-lg"></div>
+ <div class="key-insight">
+    <p>The right threshold depends on the <strong>real-world consequences</strong> of each type of error.</p>
+  </div>
+</section>
+
+<!-- Slide 23: Think About It #2 -->
+<section class="think-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 100%)">
+  <h2><i class="ph-bold ph-lightbulb"></i> Think About It</h2>
+  <div class="spacer-lg"></div>
+  <p>You've built a classifier that predicts which first-year students are likely to <strong>drop out</strong> of university.</p>
+  <div class="spacer"></div>
+  <p>Low threshold (0.3): many students flagged, extra support spread thin.</p>
+  <p>High threshold (0.7): only the most at-risk get support, but some are missed.</p>
+  <div class="spacer"></div>
+  <p>What factors should guide your choice?</p>
+</section>
+
+<!-- ============================================================
+     SECTION 6: DECISION TREES  (Slides 26–29)
+     ============================================================ -->
+
+<!-- Slide 26: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-tree-structure"></i></div>
+  <h2>Decision Trees</h2>
+  <p>If-then rules for prediction</p>
+</section>
+
+<!-- Slide 27: How trees work -->
+<section>
+  <h2>How Decision Trees Work</h2>
+  <div class="spacer"></div>
+  <p>A decision tree asks a series of <strong>yes/no questions</strong> about your features, creating a flowchart:</p>
+  <div class="spacer"></div>
+
+  <div style="text-align: center;">
+    <img src="../figures/decision-tree-example.svg" alt="Decision tree predicting elevated depression" style="max-width: 1100px; max-height: 560px;">
+  </div>
+</section>
+
+<!-- Slide 28: Strengths and weaknesses -->
+<section>
+  <h2>Trees: Strengths and Weaknesses</h2>
+  <div class="spacer"></div>
+  <div class="two-col">
+ <div class="col">
+      <h3 style="color: var(--mq-green);"><i class="ph ph-check-circle"></i> Strengths</h3>
+      <ul>
+        <li><strong>Interpretable</strong> &mdash; you can trace exactly <em>why</em> a prediction was made</li>
+        <li>Handle non-linear relationships naturally</li>
+        <li>No feature scaling needed</li>
+        <li>Handle mixed data types</li>
+      </ul>
+    </div>
+ <div class="col">
+      <h3 style="color: var(--mq-red);"><i class="ph ph-warning"></i> Weaknesses</h3>
+      <ul>
+        <li><strong>Prone to overfitting</strong> &mdash; unrestricted trees memorise the training data</li>
+        <li>Sensitive to small data changes</li>
+        <li>Greedy algorithm: locally optimal, not globally</li>
+      </ul>
+    </div>
+  </div>
+  <div class="spacer-lg"></div>
+ <div class="highlight-box">
+    <p>The downside is serious: an unrestricted tree keeps splitting until it perfectly memorises the training data. Like a clinician building an ever-more-elaborate checklist that encodes quirks of specific patients rather than general patterns.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8: ENSEMBLES & RANDOM FORESTS  (Slides 30–33)
+     ============================================================ -->
+
+<!-- Slide 30: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-tree-evergreen"></i></div>
+  <h2>Ensembles &amp; Random Forests</h2>
+  <p>Many trees are better than one</p>
+</section>
+
+<!-- Slide 31: Ensemble idea -->
+<section>
+  <h2>The Ensemble Idea</h2>
+  <div class="spacer"></div>
+  <p>One tree is <strong>interpretable but unstable</strong>. What about <em>many</em> trees?</p>
+  <div class="spacer"></div>
+  <div class="key-insight">
+    <p>Like asking <strong>100 slightly different experts</strong> for their opinion and going with the consensus.</p>
+  </div>
+  <div class="spacer"></div>
+
+  <div style="text-align: center;">
+    <img src="../figures/random-forest-concept.svg" alt="Random forest: many trees vote together" style="max-width: 1200px; max-height: 500px;">
+  </div>
+</section>
+
+<!-- Slide 32: Why it works -->
+<section>
+  <h2>Why Random Forests Work</h2>
+  <div class="spacer"></div>
+  <ul>
+ <li>Each tree is trained on a <strong>random subset</strong> of data and features
+      <ul><li>Different trees overfit to different quirks</li></ul>
+    </li>
+ <li>When you <strong>average across many trees</strong>, idiosyncratic errors cancel out</li>
+ <li>This is the <strong>bias&ndash;variance trade-off</strong> from Week 3:
+      <ul>
+        <li>Each tree: low bias, <strong>high variance</strong></li>
+        <li>The ensemble: keeps low bias, <strong>dramatically reduces variance</strong></li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<!-- Slide 32b: Feature importance -->
+<section>
+  <h2>Feature Importance</h2>
+  <div class="spacer"></div>
+ <p>Random forests rank which features contributed most across all trees:</p>
+  <div class="spacer"></div>
+  <div class="two-col">
+ <div class="col" style="text-align: center;">
+      <img src="../figures/feature-importance-example.png" alt="Random forest feature importance bar chart" style="max-width: 100%; max-height: 520px; border-radius: 8px;">
+    </div>
+ <div class="col">
+      <ul>
+        <li><strong>Mood and anxiety</strong> measures dominate &mdash; negative affect, GAD-7, stress coping</li>
+        <li><strong>Personality and demographics</strong> contribute less</li>
+        <li>This helps researchers understand <em>what the model relies on</em> &mdash; and whether those features make psychological sense</li>
+      </ul>
+      <div class="spacer"></div>
+      <div class="info-box">
+        <p>Feature importance can also guide <strong>feature selection</strong> &mdash; drop low-importance features to simplify the model.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 33: Think About It #4 -->
+<section class="think-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 100%)">
+  <h2><i class="ph-bold ph-lightbulb"></i> Think About It</h2>
+  <div class="spacer-lg"></div>
+  <p>Your logistic regression achieves <strong>82% accuracy</strong> on a depression classification task.</p>
+  <div class="spacer"></div>
+  <p>A decision tree achieves only <strong>76% accuracy</strong>.</p>
+  <div class="spacer"></div>
+  <p>A colleague says you should use the logistic regression because it's more accurate.</p>
+  <div class="spacer"></div>
+  <p>Can you think of a situation where you might prefer the <strong>less accurate</strong> tree?</p>
+</section>
+
+<!-- ============================================================
+     SECTION 8b: FAIRNESS & ETHICS
+     ============================================================ -->
+
+<!-- Slide 34: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-scales"></i></div>
+  <h2>Fairness &amp; Ethics</h2>
+  <p>When algorithms affect people</p>
+</section>
+
+<!-- Slide 35: COMPAS -->
+<section>
+  <h2>Case Study: COMPAS</h2>
+  <div class="spacer"></div>
+ <div class="case-study">
+    <h4>COMPAS — Predicting Recidivism in Criminal Justice</h4>
+    <p>An algorithm used in US courts to predict whether defendants would reoffend.</p>
+    <p class="small">ProPublica found: Black defendants were <strong>almost twice as likely</strong> to be incorrectly labelled as high risk (false positives) compared to white defendants &mdash; even when controlling for prior criminal history.</p>
+  </div>
+  <div class="spacer"></div>
+  <ul>
+ <li>Same <strong>overall accuracy</strong> for both groups</li>
+ <li>But <strong>different error patterns</strong> &mdash; same accuracy, different fairness</li>
+ <li>This is a <strong>classification problem</strong> where the type of error matters enormously</li>
+  </ul>
+</section>
+
+<!-- Slide 36: Obermeyer -->
+<section>
+  <h2>Case Study: Healthcare Algorithm Bias</h2>
+  <div class="spacer"></div>
+ <div class="case-study" style="border-left-color: var(--mq-blue);">
+    <h4 style="color: var(--mq-blue);">Obermeyer et al. (2019) &mdash; Science</h4>
+    <p>A widely-used algorithm identified patients who would benefit from extra care.</p>
+    <p class="small">The algorithm used healthcare <strong>costs</strong> as a proxy for health <strong>needs</strong>. But Black patients historically had less access to healthcare (lower costs) &rarr; the algorithm <strong>systematically under-identified</strong> Black patients who needed care.</p>
+  </div>
+  <div class="spacer"></div>
+ <div class="key-insight">
+    <p>The algorithm wasn't &ldquo;racist&rdquo; in its code &mdash; it learned from <strong>biased data</strong> that reflected historical inequities.</p>
+  </div>
+</section>
+
+<!-- Slide 37: Impossibility -->
+<section>
+  <h2>The Impossibility Theorem</h2>
+  <div class="spacer"></div>
+ <p>Chouldechova (2017) proved mathematically that when <strong>base rates differ between groups</strong>, you <em>cannot</em> simultaneously achieve:</p>
+  <div class="spacer"></div>
+ <div class="three-col">
+    <div class="col">
+      <div style="background: rgba(74,144,217,0.1); border: 2px solid var(--mq-blue); border-radius: 10px; padding: 14px; text-align: center;">
+        <p style="font-size: 0.8em;"><strong>Equal false positive rates</strong><br>across groups</p>
+      </div>
+    </div>
+    <div class="col">
+      <div style="background: rgba(167,25,48,0.1); border: 2px solid var(--mq-red); border-radius: 10px; padding: 14px; text-align: center;">
+        <p style="font-size: 0.8em;"><strong>Equal false negative rates</strong><br>across groups</p>
+      </div>
+    </div>
+    <div class="col">
+      <div style="background: rgba(200,151,44,0.1); border: 2px solid var(--mq-gold); border-radius: 10px; padding: 14px; text-align: center;">
+        <p style="font-size: 0.8em;"><strong>Equal predictive values</strong><br>across groups</p>
+      </div>
+    </div>
+  </div>
+  <div class="spacer-lg"></div>
+ <div class="highlight-box">
+    <p>This isn't a technical problem to solve &mdash; it's a <strong>values question</strong> about which type of fairness matters most in each context.</p>
+  </div>
+</section>
+
+<!-- Slide 38: Think About It #3 -->
+<section class="think-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 100%)">
+  <h2><i class="ph-bold ph-lightbulb"></i> Think About It</h2>
+  <div class="spacer-lg"></div>
+  <p>You've built a depression classifier that achieves <strong>85% accuracy overall</strong>.</p>
+  <div class="spacer"></div>
+  <p>When you check across demographic groups: <strong>90% accurate</strong> for one group but only <strong>72%</strong> for another.</p>
+  <div class="spacer"></div>
+  <p>Should you deploy this model?<br>What questions would you want to ask before deciding?</p>
+</section>
+
+<!-- ============================================================
+     SECTION 10: COMMON MISCONCEPTIONS  (Slides 39–40)
+     ============================================================ -->
+
+<!-- Slide 39: Misconceptions -->
+<section>
+  <h2>Common Misconceptions</h2>
+  <div class="spacer"></div>
+  <ul>
+ <li><strong>&ldquo;Higher accuracy always means a better model&rdquo;</strong>
+      <ul><li>Not when classes are imbalanced. Always check precision, recall, and AUC.</li></ul>
+    </li>
+ <li><strong>&ldquo;Random forests are always better than logistic regression&rdquo;</strong>
+      <ul><li>When relationships are roughly linear and data is moderate-sized, logistic regression often matches &mdash; and it's more interpretable.</li></ul>
+    </li>
+ <li><strong>&ldquo;The model's output is the final answer&rdquo;</strong>
+      <ul><li>The model outputs a probability. Converting to a label requires choosing a threshold &mdash; that's a human decision.</li></ul>
+    </li>
+ <li><strong>&ldquo;If the model is accurate, it's fair&rdquo;</strong>
+      <ul><li>Overall accuracy can hide very different error rates across groups.</li></ul>
+    </li>
+  </ul>
+</section>
+
+<!-- Slide 40: Classification pipeline -->
+<section>
+  <h2>The Classification Pipeline</h2>
+  <div class="spacer"></div>
+  <div class="flow-diagram">
+    <div class="flow-step" style="background: rgba(74,144,217,0.1); border: 2px solid var(--mq-blue); color: var(--mq-blue);">
+      <i class="ph ph-database"></i> Data
+      <div class="step-subtitle">Features + Binary Target</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-step" style="background: rgba(123,104,168,0.1); border: 2px solid var(--mq-purple); color: var(--mq-purple);">
+      <i class="ph ph-funnel"></i> Preprocess
+      <div class="step-subtitle">Clean, Scale, Encode</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-step" style="background: rgba(232,135,61,0.1); border: 2px solid var(--mq-orange); color: var(--mq-orange);">
+      <i class="ph ph-scissors"></i> Split
+      <div class="step-subtitle">Stratified Train/Test</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-step" style="background: rgba(167,25,48,0.1); border: 2px solid var(--mq-red); color: var(--mq-red);">
+      <i class="ph ph-gear"></i> Train
+      <div class="step-subtitle">LogReg, Tree, Forest</div>
+    </div>
+    <div class="flow-arrow">&rarr;</div>
+    <div class="flow-step" style="background: rgba(91,165,91,0.1); border: 2px solid var(--mq-green); color: var(--mq-green);">
+      <i class="ph ph-check-circle"></i> Evaluate
+      <div class="step-subtitle">Acc, F1, AUC, CM</div>
+    </div>
+  </div>
+  <div class="spacer-lg"></div>
+  <p style="text-align: center;">Same pipeline as regression &mdash; different metrics and different model types.</p>
+</section>
+
+<!-- ============================================================
+     SECTION 11: GETTING READY FOR WEEK 6  (Slides 41–44)
+     ============================================================ -->
+
+<!-- Slide 41: Section Divider -->
+<section class="section-divider" data-background-gradient="linear-gradient(135deg, #A71930 0%, #8B1428 100%)">
+  <div class="section-icon"><i class="ph-bold ph-rocket-launch"></i></div>
+  <h2>Getting Ready for Week 6</h2>
+  <p>Your second challenge lab</p>
+</section>
+
+<!-- Slide 42: Week 6 preview -->
+<section>
+  <h2>Week 6: Build a Defensible Classifier</h2>
+  <div class="spacer"></div>
+  <ul>
+ <li><i class="ph ph-database"></i> Real data: <strong>Boston College COVID-19 Sleep &amp; Well-Being Study</strong>
+      <ul><li>836 participants &mdash; daily surveys + personality + demographics</li></ul>
+    </li>
+ <li><i class="ph ph-code"></i> Build and compare <strong>four classifiers</strong>:
+      <ul><li>Baseline &rarr; Logistic Regression &rarr; Decision Tree &rarr; Random Forest</li></ul>
+    </li>
+ <li><i class="ph ph-target"></i> Target: <strong>Elevated depression</strong> (PHQ-9 &ge; 5) &mdash; nearly balanced (55% / 45%)</li>
+ <li><i class="ph ph-scales"></i> <strong>Justify your threshold</strong> &mdash; why 0.5? Why not 0.3 or 0.7?</li>
+ <li><i class="ph ph-chart-bar"></i> Report <strong>proper classification metrics</strong> &mdash; not just accuracy</li>
+  </ul>
+</section>
+
+<!-- Slide 43: Refactoring skill -->
+<section>
+  <h2>New LLM Skill: Refactoring</h2>
+  <div class="spacer"></div>
+ <p>Week 2: <strong>Prompting</strong> &middot; Week 4: <strong>Debugging</strong> &middot; Week 6: <strong>Refactoring</strong></p>
+  <div class="spacer"></div>
+  <div class="two-col">
+ <div class="col">
+      <div class="prompt-bad">
+        <p style="color: #dc3545; font-weight: 600; margin-bottom: 4px;"><i class="ph ph-x-circle"></i> Weak prompt</p>
+        <p style="margin-bottom: 0;">&ldquo;Clean up my code.&rdquo;</p>
+      </div>
+    </div>
+ <div class="col">
+      <div class="prompt-good">
+        <p style="color: #5BA55B; font-weight: 600; margin-bottom: 4px;"><i class="ph ph-check-circle"></i> Strong prompt</p>
+        <p style="margin-bottom: 0; font-size: 0.85em;">&ldquo;Refactor this pipeline to: (1) separate data loading from modelling, (2) add assertions to verify data shape after each merge, (3) create a reusable function for fitting and evaluating a model, (4) add docstrings, (5) add comments explaining <em>why</em> each step is done. Prioritise readability over cleverness.&rdquo;</p>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+ <div class="info-box">
+    <p><strong>Refactoring</strong> = making code cleaner and more maintainable <em>without changing what it does</em>.</p>
+  </div>
+</section>
+
+<!-- Slide 44: Download data -->
+<section>
+  <h2>Before Next Week</h2>
+  <div class="spacer"></div>
+  <div class="two-col">
+    <div class="col">
+      <h3><i class="ph ph-download"></i> Download the data</h3>
+      <div class="spacer"></div>
+      <pre><code style="font-size: 1.0em;">conda activate psyc4411-env
+cd weeks/week-06-lab/data
+python download_data.py</code></pre>
+      <div class="spacer"></div>
+      <p class="small">Downloads ~22 MB of CSV files. If you've already done this for a Week 4 bonus challenge, the files will already be there.</p>
+    </div>
+    <div class="col">
+      <h3><i class="ph ph-book-open"></i> Review</h3>
+      <div class="spacer"></div>
+      <ul>
+        <li>Read the companion reading if you haven't</li>
+        <li>Review: confusion matrix, precision, recall, F1, AUC</li>
+        <li>Know the difference between a tree and a forest</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Slide 45: Key References -->
+<section>
+  <h2>Key References</h2>
+  <div class="spacer"></div>
+  <ul>
+ <li><strong>Steyerberg et al. (2010)</strong> &mdash; Assessing prediction model performance
+      <ul><li><a href="https://doi.org/10.1097/EDE.0b013e3181c30fb2">doi.org/10.1097/EDE.0b013e3181c30fb2</a></li></ul>
+    </li>
+ <li><strong>Obermeyer et al. (2019)</strong> &mdash; Dissecting racial bias in healthcare algorithms
+      <ul><li><a href="https://doi.org/10.1126/science.aax2342">doi.org/10.1126/science.aax2342</a></li></ul>
+    </li>
+ <li><strong>Chouldechova (2017)</strong> &mdash; Fair prediction with disparate impact
+      <ul><li><a href="https://doi.org/10.1089/big.2016.0047">doi.org/10.1089/big.2016.0047</a></li></ul>
+    </li>
+ <li><strong>James et al. (2023)</strong> &mdash; <em>Intro to Statistical Learning (Python)</em>, Ch 4
+      <ul><li><a href="https://www.statlearning.com">statlearning.com</a> &mdash; Free PDF</li></ul>
+    </li>
+  </ul>
+  <div class="spacer"></div>
+ <p class="small">Full reading list: <a href="../readings.md">readings.md</a></p>
+</section>
+
+<!-- Slide 46: End Slide -->
+<section class="end-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #8B1428 100%)">
+  <h1>Questions?</h1>
+  <div class="spacer-lg"></div>
+  <p>Next week: Build a Defensible Classifier &mdash; Trees, Ensembles, and Real Data</p>
+  <div class="spacer"></div>
+  <p>PSYC4411 &middot; Macquarie University &middot; 2026</p>
+</section>
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<!-- reveal.js core -->
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+
+<!-- reveal.js plugins -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+
 <script>
   Reveal.initialize({
-    width: 1920, height: 1080, margin: 0,
-    center: false, controls: false,
-    slideNumber: false, progress: false,
-    transition: 'none', hash: false
+    // Presentation settings
+    width: 1920,
+    height: 1080,
+    margin: 0,
+    minScale: 0.2,
+    maxScale: 1.5,
+
+    // Display
+    hash: true,
+    slideNumber: false,
+    progress: false,
+    center: false,
+    transition: 'slide',
+    transitionSpeed: 'default',
+
+    // Controls
+    controls: true,
+    controlsLayout: 'edges',
+    controlsBackArrows: 'visible',
+
+    // Navigation
+    keyboard: true,
+    overview: true,
+    touch: true,
+
+    // Fragment animation
+    fragmentInURL: false,
+
+    // Plugins
+    plugins: [ RevealNotes ]
+  }).then(function () {
+    // === Custom Slide Navigation Bar ===
+    var slides = document.querySelectorAll('.reveal .slides > section');
+    var totalSlides = slides.length;
+
+    var nav = document.createElement('div');
+    nav.className = 'slide-nav';
+
+    function getSlideLabel(section, index) {
+      var h2 = section.querySelector('h2');
+      var h1 = section.querySelector('h1');
+      var title = (h2 && h2.textContent.trim()) || (h1 && h1.textContent.trim()) || '';
+      if (title.length > 40) title = title.substring(0, 38) + '\u2026';
+      return (index + 1) + (title ? '. ' + title : '');
+    }
+
+    for (var i = 0; i < totalSlides; i++) {
+      (function (idx) {
+        var pill = document.createElement('button');
+        pill.className = 'slide-nav-pill';
+        pill.textContent = idx + 1;
+        pill.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
+
+        var tooltip = document.createElement('span');
+        tooltip.className = 'nav-tooltip';
+        tooltip.textContent = getSlideLabel(slides[idx], idx);
+        pill.appendChild(tooltip);
+
+        pill.addEventListener('click', function () {
+          Reveal.slide(idx);
+        });
+        nav.appendChild(pill);
+      })(i);
+    }
+
+    document.body.appendChild(nav);
+
+    function updateNav() {
+      var current = Reveal.getIndices().h;
+      var pills = nav.querySelectorAll('.slide-nav-pill');
+      for (var j = 0; j < pills.length; j++) {
+        pills[j].classList.toggle('active', j === current);
+        pills[j].classList.toggle('visited', j < current);
+      }
+    }
+
+    Reveal.on('slidechanged', updateNav);
+    updateNav();
+
+    // === Back to Repo Link ===
+    var backLink = document.createElement('a');
+    backLink.className = 'back-to-repo';
+    backLink.href = 'https://github.com/xkiwilabs/Practical-AI-for-Behavioural-Science';
+    backLink.target = '_blank';
+    backLink.textContent = '\u2190 Back to Repo';
+    document.body.appendChild(backLink);
+
+    // === Live Clock ===
+    var clock = document.createElement('div');
+    clock.className = 'live-clock';
+    document.body.appendChild(clock);
+
+    function updateClock() {
+      var now = new Date();
+      var h = now.getHours();
+      var m = now.getMinutes();
+      var ampm = h >= 12 ? 'PM' : 'AM';
+      var h12 = h % 12 || 12;
+      clock.textContent = h12 + ':' + (m < 10 ? '0' : '') + m + ' ' + ampm;
+    }
+
+    updateClock();
+    setInterval(updateClock, 15000);
+
+    function updateOverlayStyles() {
+      var current = Reveal.getCurrentSlide();
+      var isDark = current.classList.contains('section-divider') ||
+                   current.classList.contains('title-slide') ||
+                   current.classList.contains('think-slide') ||
+                   current.classList.contains('end-slide');
+      clock.style.color = isDark ? 'rgba(255,255,255,0.5)' : '';
+      clock.style.background = isDark ? 'rgba(0,0,0,0.3)' : '';
+      backLink.style.color = isDark ? 'rgba(255,255,255,0.5)' : '';
+      backLink.style.background = isDark ? 'rgba(0,0,0,0.3)' : '';
+    }
+
+    Reveal.on('slidechanged', updateOverlayStyles);
+    updateOverlayStyles();
   });
 </script>
 </body>

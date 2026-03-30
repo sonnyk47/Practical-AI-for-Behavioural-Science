@@ -1,6 +1,6 @@
 # Paper Presentation
 
-**Weight:** 20% · **Duration:** 3 minutes · **Slides:** 1 HTML slide (submitted as PDF)
+**Weight:** 25% · **Duration:** 3 minutes · **Slides:** 1 HTML slide (submitted as PDF)
 
 ---
 

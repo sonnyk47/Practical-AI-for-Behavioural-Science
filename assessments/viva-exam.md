@@ -1,6 +1,6 @@
 # Viva Exam
 
-**Weight:** 40% · **Duration:** 15 minutes · **Format:** Individual, in-person oral exam
+**Weight:** 30% · **Duration:** 15 minutes · **Format:** Individual, in-person oral exam
 
 ---
 

@@ -4,9 +4,9 @@ PSYC4411 has three assessment items. Each one builds on the skills you develop t
 
 | Assessment | Weight | Format | Due |
 |------------|--------|--------|-----|
-| [Paper Presentation](presentation.md) | 20% | 3-min talk + 1 HTML slide (PDF submission) | Weeks 4, 6, 8, or 10 |
-| [Written Assignment](written-assignment.md) | 40% | Popular science article + LLM chat history | Sunday 19 Apr, 11:55pm |
-| [Viva Exam](viva-exam.md) | 40% | 15-min oral exam (3 sections) | Weeks 12–13 |
+| [Paper Presentation](presentation.md) | 25% | 3-min talk + 1 HTML slide (PDF submission) | Weeks 4, 6, 8, or 10 |
+| [Written Assignment](written-assignment.md) | 45% | Popular science article + LLM chat history | Sunday 19 Apr, 11:55pm |
+| [Viva Exam](viva-exam.md) | 30% | 15-min oral exam (3 sections) | Weeks 12–13 |
 
 ---
 

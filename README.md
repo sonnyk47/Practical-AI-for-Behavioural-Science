@@ -114,9 +114,9 @@ Materials are released on the Monday of each class week. The dates below show wh
 
 | Assessment | Weight | Format | Due |
 |------------|--------|--------|-----|
-| [Paper Presentation](assessments/presentation.md) | 20% | 3-min talk + 1 HTML slide (PDF submission) | Weeks 4, 6, 8, or 10 |
-| [Written Assignment](assessments/written-assignment.md) | 40% | Popular science article + LLM chat history | Sunday 19 Apr, 11:55pm |
-| [Viva Exam](assessments/viva-exam.md) | 40% | 15-min oral exam (3 sections) | Weeks 12–13 |
+| [Paper Presentation](assessments/presentation.md) | 25% | 3-min talk + 1 HTML slide (PDF submission) | Weeks 4, 6, 8, or 10 |
+| [Written Assignment](assessments/written-assignment.md) | 45% | Popular science article + LLM chat history | Sunday 19 Apr, 11:55pm |
+| [Viva Exam](assessments/viva-exam.md) | 30% | 15-min oral exam (3 sections) | Weeks 12–13 |
 
 See the [assessments folder](assessments/) for full details, rubrics, and tips.
 

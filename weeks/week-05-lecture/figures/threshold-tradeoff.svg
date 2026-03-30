@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" font-family="Inter, -apple-system, sans-serif">
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" font-size="16" font-weight="700" fill="#2D2D2D">Decision Threshold Trade-off</text>
+
+  <!-- Slider track -->
+  <rect x="80" y="100" width="440" height="8" rx="4" fill="#E0E0E0"/>
+
+  <!-- Gradient fill on track -->
+  <defs>
+    <linearGradient id="trackGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#5BA55B"/>
+      <stop offset="50%" stop-color="#C8972C"/>
+      <stop offset="100%" stop-color="#A71930"/>
+    </linearGradient>
+  </defs>
+  <rect x="80" y="100" width="440" height="8" rx="4" fill="url(#trackGrad)" opacity="0.4"/>
+
+  <!-- Threshold markers -->
+  <!-- Low threshold (0.3) -->
+  <circle cx="212" cy="104" r="12" fill="#5BA55B" stroke="white" stroke-width="2"/>
+  <text x="212" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="white">0.3</text>
+  <line x1="212" y1="116" x2="212" y2="140" stroke="#5BA55B" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Default threshold (0.5) -->
+  <circle cx="300" cy="104" r="14" fill="#C8972C" stroke="white" stroke-width="2"/>
+  <text x="300" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="white">0.5</text>
+  <line x1="300" y1="118" x2="300" y2="140" stroke="#C8972C" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- High threshold (0.7) -->
+  <circle cx="388" cy="104" r="12" fill="#A71930" stroke="white" stroke-width="2"/>
+  <text x="388" y="108" text-anchor="middle" font-size="10" font-weight="700" fill="white">0.7</text>
+  <line x1="388" y1="116" x2="388" y2="140" stroke="#A71930" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Track labels -->
+  <text x="80" y="88" text-anchor="middle" font-size="11" fill="#8C8C8C">0.0</text>
+  <text x="520" y="88" text-anchor="middle" font-size="11" fill="#8C8C8C">1.0</text>
+  <text x="300" y="88" text-anchor="middle" font-size="11" fill="#8C8C8C">Threshold</text>
+
+  <!-- Low threshold box -->
+  <rect x="115" y="148" width="195" height="80" rx="8" fill="#5BA55B" fill-opacity="0.1" stroke="#5BA55B" stroke-width="1.5"/>
+  <text x="212" y="172" text-anchor="middle" font-size="13" font-weight="600" fill="#5BA55B">Low Threshold (0.3)</text>
+  <text x="212" y="193" text-anchor="middle" font-size="11" fill="#2D2D2D">Higher recall (catch more cases)</text>
+  <text x="212" y="212" text-anchor="middle" font-size="11" fill="#8C8C8C">Lower precision (more false alarms)</text>
+
+  <!-- High threshold box -->
+  <rect x="290" y="148" width="195" height="80" rx="8" fill="#A71930" fill-opacity="0.1" stroke="#A71930" stroke-width="1.5"/>
+  <text x="388" y="172" text-anchor="middle" font-size="13" font-weight="600" fill="#A71930">High Threshold (0.7)</text>
+  <text x="388" y="193" text-anchor="middle" font-size="11" fill="#2D2D2D">Higher precision (fewer false alarms)</text>
+  <text x="388" y="212" text-anchor="middle" font-size="11" fill="#8C8C8C">Lower recall (miss more cases)</text>
+
+  <!-- Bottom context -->
+  <text x="212" y="260" text-anchor="middle" font-size="12" fill="#5BA55B" font-weight="600">Wide net</text>
+  <text x="212" y="278" text-anchor="middle" font-size="11" fill="#8C8C8C">Best for screening</text>
+  <text x="212" y="294" text-anchor="middle" font-size="11" fill="#8C8C8C">(missing someone is costly)</text>
+
+  <text x="388" y="260" text-anchor="middle" font-size="12" fill="#A71930" font-weight="600">Conservative</text>
+  <text x="388" y="278" text-anchor="middle" font-size="11" fill="#8C8C8C">Best for clinical trials</text>
+  <text x="388" y="294" text-anchor="middle" font-size="11" fill="#8C8C8C">(intervention is expensive)</text>
+</svg>

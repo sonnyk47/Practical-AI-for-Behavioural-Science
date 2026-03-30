@@ -1,10 +1,12 @@
 # Written Assignment: Popular Science Article with LLM Collaboration
 
-**Weight:** 40% · **Due:** Sunday 19 April 2026, 11:55pm · **Length:** Maximum 1400 words
+**Weight:** 45% · **Due:** Sunday 19 April 2026, 11:55pm · **Length:** Maximum 1400 words
 
 ---
 
-## Overview
+## Overview 
+
+#Might be worth mentioning here the fact that they will write an article on the paper they picked for presentation. I know it's mentioned later but might be worth mentioning from getgo.
 
 Write a popular science article (maximum 1400 words) about research that uses machine learning or AI in psychological or cognitive science. This assignment is designed to develop your skills in science communication *and* in working effectively with LLM assistants.
 

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" font-family="Inter, -apple-system, sans-serif">
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-size="16" font-weight="700" fill="#2D2D2D">Random Forest: Many Trees Vote Together</text>
+
+  <!-- Tree 1 -->
+  <rect x="30" y="55" width="110" height="130" rx="10" fill="#5BA55B" fill-opacity="0.1" stroke="#5BA55B" stroke-width="1.5"/>
+  <text x="85" y="78" text-anchor="middle" font-size="12" font-weight="600" fill="#5BA55B">Tree 1</text>
+  <!-- Mini tree structure -->
+  <circle cx="85" cy="100" r="6" fill="#5BA55B" fill-opacity="0.3"/>
+  <line x1="79" y1="106" x2="65" y2="120" stroke="#5BA55B" stroke-width="1"/>
+  <line x1="91" y1="106" x2="105" y2="120" stroke="#5BA55B" stroke-width="1"/>
+  <circle cx="65" cy="125" r="5" fill="#5BA55B" fill-opacity="0.3"/>
+  <circle cx="105" cy="125" r="5" fill="#5BA55B" fill-opacity="0.3"/>
+  <line x1="59" y1="130" x2="50" y2="142" stroke="#5BA55B" stroke-width="1"/>
+  <line x1="71" y1="130" x2="80" y2="142" stroke="#5BA55B" stroke-width="1"/>
+  <rect x="40" y="150" width="30" height="18" rx="4" fill="#A71930" fill-opacity="0.3"/>
+  <rect x="75" y="150" width="30" height="18" rx="4" fill="#4A90D9" fill-opacity="0.3"/>
+  <text x="85" y="163" text-anchor="middle" font-size="8" fill="#2D2D2D"></text>
+
+  <!-- Tree 2 -->
+  <rect x="160" y="55" width="110" height="130" rx="10" fill="#4A90D9" fill-opacity="0.1" stroke="#4A90D9" stroke-width="1.5"/>
+  <text x="215" y="78" text-anchor="middle" font-size="12" font-weight="600" fill="#4A90D9">Tree 2</text>
+  <circle cx="215" cy="100" r="6" fill="#4A90D9" fill-opacity="0.3"/>
+  <line x1="209" y1="106" x2="195" y2="120" stroke="#4A90D9" stroke-width="1"/>
+  <line x1="221" y1="106" x2="235" y2="120" stroke="#4A90D9" stroke-width="1"/>
+  <circle cx="195" cy="125" r="5" fill="#4A90D9" fill-opacity="0.3"/>
+  <circle cx="235" cy="125" r="5" fill="#4A90D9" fill-opacity="0.3"/>
+  <line x1="229" y1="130" x2="220" y2="142" stroke="#4A90D9" stroke-width="1"/>
+  <line x1="241" y1="130" x2="250" y2="142" stroke="#4A90D9" stroke-width="1"/>
+  <rect x="170" y="150" width="30" height="18" rx="4" fill="#A71930" fill-opacity="0.3"/>
+  <rect x="205" y="150" width="30" height="18" rx="4" fill="#A71930" fill-opacity="0.3"/>
+
+  <!-- Tree 3 -->
+  <rect x="290" y="55" width="110" height="130" rx="10" fill="#C8972C" fill-opacity="0.1" stroke="#C8972C" stroke-width="1.5"/>
+  <text x="345" y="78" text-anchor="middle" font-size="12" font-weight="600" fill="#C8972C">Tree 3</text>
+  <circle cx="345" cy="100" r="6" fill="#C8972C" fill-opacity="0.3"/>
+  <line x1="339" y1="106" x2="325" y2="120" stroke="#C8972C" stroke-width="1"/>
+  <line x1="351" y1="106" x2="365" y2="120" stroke="#C8972C" stroke-width="1"/>
+  <circle cx="325" cy="125" r="5" fill="#C8972C" fill-opacity="0.3"/>
+  <circle cx="365" cy="125" r="5" fill="#C8972C" fill-opacity="0.3"/>
+  <line x1="319" y1="130" x2="310" y2="142" stroke="#C8972C" stroke-width="1"/>
+  <line x1="331" y1="130" x2="340" y2="142" stroke="#C8972C" stroke-width="1"/>
+  <rect x="300" y="150" width="30" height="18" rx="4" fill="#A71930" fill-opacity="0.3"/>
+  <rect x="335" y="150" width="30" height="18" rx="4" fill="#4A90D9" fill-opacity="0.3"/>
+
+  <!-- Dots indicating more trees -->
+  <text x="435" y="125" text-anchor="middle" font-size="24" fill="#8C8C8C">...</text>
+  <text x="435" y="148" text-anchor="middle" font-size="10" fill="#8C8C8C">100 trees</text>
+
+  <!-- Tree N -->
+  <rect x="480" y="55" width="110" height="130" rx="10" fill="#7B68A8" fill-opacity="0.1" stroke="#7B68A8" stroke-width="1.5"/>
+  <text x="535" y="78" text-anchor="middle" font-size="12" font-weight="600" fill="#7B68A8">Tree 100</text>
+  <circle cx="535" cy="100" r="6" fill="#7B68A8" fill-opacity="0.3"/>
+  <line x1="529" y1="106" x2="515" y2="120" stroke="#7B68A8" stroke-width="1"/>
+  <line x1="541" y1="106" x2="555" y2="120" stroke="#7B68A8" stroke-width="1"/>
+  <circle cx="515" cy="125" r="5" fill="#7B68A8" fill-opacity="0.3"/>
+  <circle cx="555" cy="125" r="5" fill="#7B68A8" fill-opacity="0.3"/>
+  <rect x="490" y="150" width="30" height="18" rx="4" fill="#A71930" fill-opacity="0.3"/>
+  <rect x="525" y="150" width="30" height="18" rx="4" fill="#A71930" fill-opacity="0.3"/>
+
+  <!-- Arrows down to vote -->
+  <line x1="85" y1="185" x2="85" y2="215" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="215" y1="185" x2="215" y2="215" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="345" y1="185" x2="345" y2="215" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  <line x1="535" y1="185" x2="535" y2="215" stroke="#8C8C8C" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#8C8C8C"/>
+    </marker>
+  </defs>
+
+  <!-- Individual predictions -->
+  <text x="85" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">Elevated</text>
+  <text x="215" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">Elevated</text>
+  <text x="345" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="#4A90D9">Minimal</text>
+  <text x="535" y="232" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">Elevated</text>
+
+  <!-- Vote box -->
+  <rect x="150" y="252" width="400" height="60" rx="12" fill="#A71930" fill-opacity="0.12" stroke="#A71930" stroke-width="2"/>
+  <text x="350" y="275" text-anchor="middle" font-size="14" font-weight="700" fill="#A71930">Majority Vote: Elevated (75% of trees agree)</text>
+  <text x="350" y="300" text-anchor="middle" font-size="11" fill="#8C8C8C">Individual errors cancel out &#x2192; ensemble is more reliable than any single tree</text>
+
+  <!-- Bottom note -->
+  <text x="350" y="330" text-anchor="middle" font-size="11" fill="#8C8C8C" font-style="italic">Each tree sees a random subset of data and features &#x2014; diversity reduces overfitting</text>
+</svg>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 6: Trees, Ensembles, Feature Importance, and Error Analysis — PSYC4411</title>
+  <title>Week 6: Build a Defensible Classifier — Challenge Lab — PSYC4411</title>
 
   <!-- reveal.js core CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
@@ -20,28 +20,140 @@
 <div class="reveal">
 <div class="slides">
 
-  <section class="title-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #8B1428 100%)">
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 60px;">
-      <p style="font-size: 1.4em; color: rgba(255,255,255,0.5); margin-bottom: 12px; font-weight: 300;">PSYC4411 — Practical AI for Behavioural Science</p>
-      <p style="font-size: 1.1em; color: rgba(255,255,255,0.4); margin-bottom: 40px; font-weight: 300;">Week 6 — Challenge Lab</p>
-      <h1 style="font-size: 2.4em; color: white; margin-bottom: 40px; line-height: 1.2;">Trees, Ensembles, Feature Importance, and Error Analysis</h1>
-      <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: 24px 48px; margin-top: 20px;">
-        <p style="font-size: 1.3em; color: rgba(255,255,255,0.7); margin: 0;"><i class="ph-bold ph-clock"></i>&ensp;Content coming soon</p>
-        <p style="font-size: 0.9em; color: rgba(255,255,255,0.4); margin-top: 8px;">Materials will be available on 30 March</p>
-      </div>
-      <p style="font-size: 0.85em; color: rgba(255,255,255,0.3); margin-top: 48px;">Prof. Michael Richardson — Macquarie University, 2026</p>
+<!-- Slide 1: Title -->
+<section class="title-slide" data-background-gradient="linear-gradient(135deg, #1A1A2E 0%, #16213E 50%, #A71930 100%)">
+  <div class="course-code">PSYC4411</div>
+  <h1>Build a Defensible Classifier</h1>
+  <h2>Week 6 Challenge Lab</h2>
+  <div class="spacer-lg"></div>
+  <p class="subtitle">Trees, Ensembles &amp; Real Mental Health Data</p>
+</section>
+
+<!-- Slide 2: Today's Challenge -->
+<section>
+  <h2>Today's Challenge</h2>
+  <div class="spacer"></div>
+  <ul>
+ <li><i class="ph ph-target"></i> <strong>Build classifiers</strong> for elevated depression (PHQ-9 &ge; 5)
+      <ul><li>Baseline &rarr; Logistic Regression &rarr; Decision Tree &rarr; Random Forest</li></ul>
+    </li>
+ <li><i class="ph ph-chart-bar"></i> <strong>Report proper metrics</strong> &mdash; not just accuracy
+      <ul><li>Precision, recall, F1, AUC, confusion matrix</li></ul>
+    </li>
+ <li><i class="ph ph-sliders"></i> <strong>Justify your threshold</strong> &mdash; why 0.5?
+      <ul><li>Try at least one alternative and compare</li></ul>
+    </li>
+ <li><i class="ph ph-presentation-chart"></i> <strong>Present your results</strong> (1 slide, ~3 min)
+      <ul><li>Best model + metrics, threshold justification, feature importance, ethical consideration, refactoring win</li></ul>
+    </li>
+  </ul>
+</section>
+
+<!-- Slide 3: The Dataset -->
+<section>
+  <h2>The Dataset: BC COVID Sleep &amp; Well-Being</h2>
+  <div class="spacer"></div>
+  <div class="two-col">
+    <div class="col">
+      <ul>
+ <li><strong>3 CSV files</strong> to merge:
+          <ul>
+            <li><code>daily_survey.csv</code> &mdash; 52K daily entries</li>
+            <li><code>demographics.csv</code> &mdash; age, sex</li>
+            <li><code>round1_assessment.csv</code> &mdash; Big Five, GAD-7</li>
+          </ul>
+        </li>
+ <li><strong>After merging:</strong> ~836 participants</li>
+ <li><strong>Target:</strong> PHQ-9 &ge; 5 (elevated depression)
+          <ul><li>~54.5% elevated / ~45.5% minimal &mdash; nearly balanced</li></ul>
+        </li>
+ <li><strong>21 features:</strong> sleep, mood, personality, demographics, anxiety</li>
+      </ul>
     </div>
-  </section>
+ <div class="col">
+      <div class="info-box">
+        <p><strong>Data prep is done for you!</strong> The starter notebook loads, aggregates, and merges the data in cells 1&ndash;8. You start modelling from cell 9.</p>
+      </div>
+      <div class="spacer"></div>
+      <div class="highlight-box">
+        <p><strong>Key features:</strong> PANAS negative affect, GAD-7 anxiety, stress coping, sadness, isolation, sleep latency, personality (Big Five)</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div></div>
+<!-- Slide 4: New Skill — Refactoring -->
+<section>
+  <h2>New LLM Skill: Refactoring</h2>
+  <div class="spacer"></div>
+ <p>Week 2: <strong>Prompting</strong> &middot; Week 4: <strong>Debugging</strong> &middot; Week 6: <strong>Refactoring</strong></p>
+  <div class="spacer"></div>
+  <div class="two-col">
+ <div class="col">
+      <div class="prompt-bad">
+        <p style="color: #dc3545; font-weight: 600; margin-bottom: 4px;"><i class="ph ph-x-circle"></i> Weak</p>
+        <p style="margin-bottom: 0;">&ldquo;Clean up my code.&rdquo;</p>
+      </div>
+    </div>
+ <div class="col">
+      <div class="prompt-good">
+        <p style="color: #5BA55B; font-weight: 600; margin-bottom: 4px;"><i class="ph ph-check-circle"></i> Strong</p>
+        <p style="margin-bottom: 0; font-size: 0.85em;">&ldquo;Refactor to: (1) separate loading from modelling, (2) add shape assertions after merges, (3) create a reusable <code>evaluate_model()</code> function, (4) add docstrings. Keep logic identical.&rdquo;</p>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+ <div class="key-insight">
+    <p><strong>Refactoring</strong> = making code cleaner without changing what it does. Aim for code someone else could read and understand.</p>
+  </div>
+</section>
 
+<!-- Slide 5: Getting Started -->
+<section>
+  <h2>Getting Started</h2>
+  <div class="spacer"></div>
+  <div class="two-col">
+    <div class="col">
+      <h3><i class="ph ph-rocket-launch"></i> Steps</h3>
+      <ol>
+ <li>Open <code>starter.ipynb</code> or <code>starter.py</code></li>
+ <li>Run cells 1&ndash;8 (data is loaded &amp; merged)</li>
+ <li>Ask your AI to <strong>plan first</strong></li>
+ <li>Build: Baseline &rarr; LogReg &rarr; Tree &rarr; Forest</li>
+ <li>Evaluate, analyse, refactor, present</li>
+      </ol>
+    </div>
+ <div class="col">
+      <h3><i class="ph ph-chart-line-up"></i> Target Numbers</h3>
+      <div class="spacer"></div>
+      <div style="background: var(--mq-light-grey); border-radius: 10px; padding: 16px 20px;">
+        <p style="margin-bottom: 6px;"><strong>Baseline accuracy:</strong> ~54.5%</p>
+        <p style="margin-bottom: 6px;"><strong>Good model accuracy:</strong> ~80%</p>
+        <p style="margin-bottom: 6px;"><strong>Good model AUC:</strong> ~0.90</p>
+        <p style="margin-bottom: 0;"><strong>Top predictors:</strong> PANAS negative affect, GAD-7, stress coping</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<!-- reveal.js core -->
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+
 <script>
   Reveal.initialize({
-    width: 1920, height: 1080, margin: 0,
-    center: false, controls: false,
-    slideNumber: false, progress: false,
-    transition: 'none', hash: false
+    width: 1920,
+    height: 1080,
+    margin: 0,
+    center: false,
+    controls: true,
+    controlsLayout: 'edges',
+    progress: false,
+    hash: true,
+    transition: 'slide',
+    plugins: []
   });
 </script>
 </body>
