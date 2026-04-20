@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 420" font-family="Inter, -apple-system, sans-serif">
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" font-size="16" font-weight="700" fill="#2D2D2D">PCA vs UMAP: Two Ways to See High-Dimensional Data</text>
+
+  <!-- Left panel: PCA projection -->
+  <rect x="20" y="45" width="330" height="290" rx="10" fill="#F8F8F8" stroke="#4A90D9" stroke-width="1.5"/>
+  <text x="185" y="68" text-anchor="middle" font-size="14" font-weight="600" fill="#4A90D9">PCA (Linear)</text>
+  <text x="185" y="84" text-anchor="middle" font-size="10" fill="#8C8C8C">Preserves global distances and variance</text>
+
+  <!-- PCA scatter: points spread out, some overlap -->
+  <!-- Cluster A (low distress) - blue -->
+  <circle cx="80" cy="200" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="95" cy="185" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="75" cy="175" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="110" cy="195" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="90" cy="210" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="100" cy="170" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="65" cy="190" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="105" cy="220" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="85" cy="165" r="4" fill="#4A90D9" fill-opacity="0.5"/>
+
+  <!-- Cluster B (medium) - orange, overlapping -->
+  <circle cx="150" cy="175" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="165" cy="190" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="140" cy="200" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="175" cy="170" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="155" cy="210" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="130" cy="185" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="170" cy="195" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="145" cy="160" r="4" fill="#C8972C" fill-opacity="0.5"/>
+  <circle cx="160" cy="220" r="4" fill="#C8972C" fill-opacity="0.5"/>
+
+  <!-- Cluster C (high distress) - red, overlapping -->
+  <circle cx="220" cy="165" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="235" cy="180" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="250" cy="195" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="210" cy="190" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="245" cy="170" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="260" cy="185" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="225" cy="205" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="270" cy="175" r="4" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="240" cy="210" r="4" fill="#A71930" fill-opacity="0.5"/>
+
+  <!-- PCA axes -->
+  <line x1="50" y1="260" x2="310" y2="260" stroke="#8C8C8C" stroke-width="1"/>
+  <line x1="50" y1="260" x2="50" y2="130" stroke="#8C8C8C" stroke-width="1"/>
+  <text x="180" y="278" text-anchor="middle" font-size="10" fill="#8C8C8C">PC1 (General Distress)</text>
+  <text x="40" y="195" text-anchor="middle" font-size="10" fill="#8C8C8C" transform="rotate(-90, 40, 195)">PC2</text>
+
+  <!-- PCA note -->
+  <text x="185" y="310" text-anchor="middle" font-size="10" fill="#4A90D9">Groups overlap &#x2014; hard to see boundaries</text>
+  <text x="185" y="325" text-anchor="middle" font-size="10" fill="#5BA55B">&#x2713; Distances are meaningful</text>
+
+  <!-- Right panel: UMAP projection -->
+  <rect x="400" y="45" width="330" height="290" rx="10" fill="#F8F8F8" stroke="#A71930" stroke-width="1.5"/>
+  <text x="565" y="68" text-anchor="middle" font-size="14" font-weight="600" fill="#A71930">UMAP (Non-linear)</text>
+  <text x="565" y="84" text-anchor="middle" font-size="10" fill="#8C8C8C">Preserves local neighbourhood structure</text>
+
+  <!-- UMAP scatter: tight clusters, well-separated -->
+  <!-- Cluster A (low distress) - blue, tight -->
+  <circle cx="460" cy="140" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="470" cy="130" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="455" cy="150" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="478" cy="145" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="465" cy="155" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="450" cy="135" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="475" cy="125" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="485" cy="138" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="462" cy="160" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+
+  <!-- Cluster B (medium) - orange, tight and separate -->
+  <circle cx="580" cy="220" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="590" cy="210" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="575" cy="230" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="600" cy="225" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="585" cy="235" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="570" cy="215" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="595" cy="240" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="605" cy="215" r="4" fill="#C8972C" fill-opacity="0.6"/>
+  <circle cx="578" cy="245" r="4" fill="#C8972C" fill-opacity="0.6"/>
+
+  <!-- Cluster C (high distress) - red, tight and separate -->
+  <circle cx="680" cy="145" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="690" cy="135" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="670" cy="155" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="695" cy="150" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="685" cy="160" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="675" cy="140" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="700" cy="140" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="688" cy="165" r="4" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="678" cy="130" r="4" fill="#A71930" fill-opacity="0.6"/>
+
+  <!-- UMAP note -->
+  <text x="565" y="290" text-anchor="middle" font-size="10" fill="#A71930">Groups look cleanly separated</text>
+  <text x="565" y="305" text-anchor="middle" font-size="10" fill="#A71930" font-weight="600">&#x26A0; But distances between clusters are NOT meaningful!</text>
+  <text x="565" y="320" text-anchor="middle" font-size="10" fill="#8C8C8C">Cluster size and gaps can be artefacts</text>
+
+  <!-- Legend -->
+  <circle cx="200" cy="360" r="5" fill="#4A90D9" fill-opacity="0.6"/>
+  <text x="215" y="364" font-size="11" fill="#2D2D2D">Low distress</text>
+  <circle cx="340" cy="360" r="5" fill="#C8972C" fill-opacity="0.6"/>
+  <text x="355" y="364" font-size="11" fill="#2D2D2D">Moderate distress</text>
+  <circle cx="500" cy="360" r="5" fill="#A71930" fill-opacity="0.6"/>
+  <text x="515" y="364" font-size="11" fill="#2D2D2D">High distress</text>
+
+  <!-- Bottom annotation -->
+  <text x="375" y="395" text-anchor="middle" font-size="12" fill="#2D2D2D" font-style="italic">PCA is trustworthy but blurry. UMAP is vivid but can mislead.</text>
+  <text x="375" y="413" text-anchor="middle" font-size="11" fill="#8C8C8C">Use UMAP for exploration, PCA for measurement. Report both if possible.</text>
+</svg>

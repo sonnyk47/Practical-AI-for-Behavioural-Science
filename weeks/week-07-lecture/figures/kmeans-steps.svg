@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 440" font-family="Inter, -apple-system, sans-serif">
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" font-size="16" font-weight="700" fill="#2D2D2D">k-Means Clustering: How It Works (k = 3)</text>
+
+  <!-- Panel 1: Initialise -->
+  <rect x="15" y="50" width="170" height="170" rx="8" fill="#F8F8F8" stroke="#D0D0D0" stroke-width="1"/>
+  <text x="100" y="70" text-anchor="middle" font-size="12" font-weight="600" fill="#2D2D2D">Step 1: Place Centroids</text>
+
+  <!-- Uncoloured points -->
+  <circle cx="50" cy="110" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="65" cy="130" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="55" cy="150" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="80" cy="95" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="95" cy="140" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="105" cy="120" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="120" cy="155" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="130" cy="100" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="140" cy="130" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="155" cy="160" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="145" cy="110" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+  <circle cx="70" cy="170" r="3.5" fill="#8C8C8C" fill-opacity="0.4"/>
+
+  <!-- Random centroids (stars/crosses) -->
+  <text x="70" y="105" text-anchor="middle" font-size="18" fill="#A71930" font-weight="700">+</text>
+  <text x="120" y="140" text-anchor="middle" font-size="18" fill="#4A90D9" font-weight="700">+</text>
+  <text x="100" y="175" text-anchor="middle" font-size="18" fill="#5BA55B" font-weight="700">+</text>
+
+  <text x="100" y="205" text-anchor="middle" font-size="9" fill="#8C8C8C">Randomly place 3 centroids</text>
+
+  <!-- Arrow 1→2 -->
+  <text x="197" y="135" text-anchor="middle" font-size="16" fill="#8C8C8C">&#x2192;</text>
+
+  <!-- Panel 2: Assign -->
+  <rect x="205" y="50" width="170" height="170" rx="8" fill="#F8F8F8" stroke="#D0D0D0" stroke-width="1"/>
+  <text x="290" y="70" text-anchor="middle" font-size="12" font-weight="600" fill="#2D2D2D">Step 2: Assign Points</text>
+
+  <!-- Coloured points (assigned to nearest centroid) -->
+  <circle cx="240" cy="110" r="3.5" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="255" cy="130" r="3.5" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="245" cy="150" r="3.5" fill="#5BA55B" fill-opacity="0.5"/>
+  <circle cx="270" cy="95" r="3.5" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="285" cy="140" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="295" cy="120" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="310" cy="155" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="320" cy="100" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="330" cy="130" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="345" cy="160" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="335" cy="110" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="260" cy="170" r="3.5" fill="#5BA55B" fill-opacity="0.5"/>
+
+  <!-- Same centroids -->
+  <text x="260" y="105" text-anchor="middle" font-size="18" fill="#A71930" font-weight="700">+</text>
+  <text x="310" y="140" text-anchor="middle" font-size="18" fill="#4A90D9" font-weight="700">+</text>
+  <text x="290" y="175" text-anchor="middle" font-size="18" fill="#5BA55B" font-weight="700">+</text>
+
+  <text x="290" y="205" text-anchor="middle" font-size="9" fill="#8C8C8C">Each point joins nearest centroid</text>
+
+  <!-- Arrow 2→3 -->
+  <text x="387" y="135" text-anchor="middle" font-size="16" fill="#8C8C8C">&#x2192;</text>
+
+  <!-- Panel 3: Update -->
+  <rect x="395" y="50" width="170" height="170" rx="8" fill="#F8F8F8" stroke="#D0D0D0" stroke-width="1"/>
+  <text x="480" y="70" text-anchor="middle" font-size="12" font-weight="600" fill="#2D2D2D">Step 3: Move Centroids</text>
+
+  <!-- Same coloured points -->
+  <circle cx="430" cy="110" r="3.5" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="445" cy="130" r="3.5" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="435" cy="150" r="3.5" fill="#5BA55B" fill-opacity="0.5"/>
+  <circle cx="460" cy="95" r="3.5" fill="#A71930" fill-opacity="0.5"/>
+  <circle cx="475" cy="140" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="485" cy="120" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="500" cy="155" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="510" cy="100" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="520" cy="130" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="535" cy="160" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="525" cy="110" r="3.5" fill="#4A90D9" fill-opacity="0.5"/>
+  <circle cx="450" cy="170" r="3.5" fill="#5BA55B" fill-opacity="0.5"/>
+
+  <!-- Moved centroids (to mean of cluster) -->
+  <text x="445" y="115" text-anchor="middle" font-size="18" fill="#A71930" font-weight="700">+</text>
+  <text x="507" y="135" text-anchor="middle" font-size="18" fill="#4A90D9" font-weight="700">+</text>
+  <text x="443" y="163" text-anchor="middle" font-size="18" fill="#5BA55B" font-weight="700">+</text>
+
+  <!-- Movement arrows -->
+  <line x1="454" y1="104" x2="447" y2="108" stroke="#A71930" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="500" y1="133" x2="507" y2="128" stroke="#4A90D9" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <text x="480" y="205" text-anchor="middle" font-size="9" fill="#8C8C8C">Centroids move to cluster mean</text>
+
+  <!-- Arrow 3→4 -->
+  <text x="577" y="135" text-anchor="middle" font-size="16" fill="#8C8C8C">&#x2192;</text>
+
+  <!-- Panel 4: Converge -->
+  <rect x="585" y="50" width="150" height="170" rx="8" fill="#F8F8F8" stroke="#5BA55B" stroke-width="1.5"/>
+  <text x="660" y="70" text-anchor="middle" font-size="12" font-weight="600" fill="#5BA55B">Step 4: Converged!</text>
+
+  <!-- Same points in same positions as Steps 1-3 (panel offset +570 from Step 1) -->
+  <circle cx="620" cy="110" r="3.5" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="635" cy="130" r="3.5" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="625" cy="150" r="3.5" fill="#5BA55B" fill-opacity="0.6"/>
+  <circle cx="650" cy="95" r="3.5" fill="#A71930" fill-opacity="0.6"/>
+  <circle cx="665" cy="140" r="3.5" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="675" cy="120" r="3.5" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="690" cy="155" r="3.5" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="700" cy="100" r="3.5" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="710" cy="130" r="3.5" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="725" cy="160" r="3.5" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="715" cy="110" r="3.5" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="640" cy="170" r="3.5" fill="#5BA55B" fill-opacity="0.6"/>
+
+  <!-- Converged centroids at cluster means -->
+  <text x="635" y="115" text-anchor="middle" font-size="14" fill="#A71930" font-weight="700">+</text>
+  <text x="697" y="135" text-anchor="middle" font-size="14" fill="#4A90D9" font-weight="700">+</text>
+  <text x="633" y="163" text-anchor="middle" font-size="14" fill="#5BA55B" font-weight="700">+</text>
+
+  <text x="660" y="205" text-anchor="middle" font-size="9" fill="#5BA55B">Points and centroids stable</text>
+
+  <!-- Bottom section: Choosing k -->
+  <rect x="30" y="250" width="690" height="170" rx="10" fill="#F8F8F8" stroke="#D0D0D0" stroke-width="1"/>
+  <text x="375" y="275" text-anchor="middle" font-size="14" font-weight="600" fill="#2D2D2D">How Do You Choose k?</text>
+
+  <!-- Elbow plot (left) -->
+  <text x="170" y="300" text-anchor="middle" font-size="11" font-weight="600" fill="#C8972C">Elbow Plot</text>
+  <!-- Axes -->
+  <line x1="70" y1="395" x2="270" y2="395" stroke="#8C8C8C" stroke-width="1"/>
+  <line x1="70" y1="395" x2="70" y2="310" stroke="#8C8C8C" stroke-width="1"/>
+  <text x="170" y="415" text-anchor="middle" font-size="9" fill="#8C8C8C">Number of clusters (k)</text>
+  <text x="55" y="355" text-anchor="middle" font-size="9" fill="#8C8C8C" transform="rotate(-90, 55, 355)">Inertia</text>
+  <!-- Elbow curve -->
+  <polyline points="90,320 130,345 170,370 210,380 250,385" fill="none" stroke="#C8972C" stroke-width="2"/>
+  <circle cx="90" cy="320" r="4" fill="#C8972C"/>
+  <circle cx="130" cy="345" r="4" fill="#C8972C"/>
+  <circle cx="170" cy="370" r="4" fill="#A71930"/>
+  <circle cx="210" cy="380" r="4" fill="#C8972C"/>
+  <circle cx="250" cy="385" r="4" fill="#C8972C"/>
+  <text x="90" y="315" text-anchor="middle" font-size="9" fill="#8C8C8C">k=2</text>
+  <text x="130" y="340" text-anchor="middle" font-size="9" fill="#8C8C8C">k=3</text>
+  <text x="170" y="365" text-anchor="middle" font-size="9" fill="#A71930" font-weight="600">k=4</text>
+  <text x="210" y="375" text-anchor="middle" font-size="9" fill="#8C8C8C">k=5</text>
+  <text x="250" y="380" text-anchor="middle" font-size="9" fill="#8C8C8C">k=6</text>
+  <!-- Elbow annotation -->
+  <line x1="170" y1="370" x2="185" y2="350" stroke="#A71930" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="220" y="347" text-anchor="middle" font-size="9" fill="#A71930" font-weight="600">&#x2190; Elbow here?</text>
+
+  <!-- Silhouette scores (right) -->
+  <text x="535" y="300" text-anchor="middle" font-size="11" font-weight="600" fill="#7B68A8">Silhouette Score</text>
+  <!-- Axes -->
+  <line x1="410" y1="395" x2="660" y2="395" stroke="#8C8C8C" stroke-width="1"/>
+  <line x1="410" y1="395" x2="410" y2="310" stroke="#8C8C8C" stroke-width="1"/>
+  <text x="535" y="415" text-anchor="middle" font-size="9" fill="#8C8C8C">Number of clusters (k)</text>
+  <text x="395" y="355" text-anchor="middle" font-size="9" fill="#8C8C8C" transform="rotate(-90, 395, 355)">Score</text>
+  <!-- Bar chart -->
+  <rect x="435" y="345" width="30" height="50" rx="3" fill="#7B68A8" fill-opacity="0.3"/>
+  <rect x="490" y="330" width="30" height="65" rx="3" fill="#A71930" fill-opacity="0.4"/>
+  <rect x="545" y="340" width="30" height="55" rx="3" fill="#7B68A8" fill-opacity="0.3"/>
+  <rect x="600" y="355" width="30" height="40" rx="3" fill="#7B68A8" fill-opacity="0.3"/>
+  <text x="450" y="410" text-anchor="middle" font-size="9" fill="#8C8C8C">k=2</text>
+  <text x="505" y="410" text-anchor="middle" font-size="9" fill="#A71930" font-weight="600">k=3</text>
+  <text x="560" y="410" text-anchor="middle" font-size="9" fill="#8C8C8C">k=4</text>
+  <text x="615" y="410" text-anchor="middle" font-size="9" fill="#8C8C8C">k=5</text>
+  <!-- Score labels -->
+  <text x="450" y="342" text-anchor="middle" font-size="9" fill="#7B68A8">0.18</text>
+  <text x="505" y="327" text-anchor="middle" font-size="9" fill="#A71930" font-weight="600">0.23</text>
+  <text x="560" y="337" text-anchor="middle" font-size="9" fill="#7B68A8">0.19</text>
+  <text x="615" y="352" text-anchor="middle" font-size="9" fill="#7B68A8">0.15</text>
+
+  <!-- Bottom annotation -->
+  <text x="375" y="435" text-anchor="middle" font-size="11" fill="#8C8C8C" font-style="italic">The "right" number of clusters is a judgement call, not a mathematical fact &#x2014; these tools guide the decision</text>
+</svg>

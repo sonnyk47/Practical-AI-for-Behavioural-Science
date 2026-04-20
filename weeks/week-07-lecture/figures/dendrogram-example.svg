@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" font-family="Inter, -apple-system, sans-serif">
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-size="16" font-weight="700" fill="#2D2D2D">Hierarchical Clustering: Building a Tree of Similarity</text>
+
+  <!-- Y-axis (distance) -->
+  <line x1="60" y1="60" x2="60" y2="310" stroke="#8C8C8C" stroke-width="1.5"/>
+  <text x="30" y="185" text-anchor="middle" font-size="11" fill="#8C8C8C" transform="rotate(-90, 30, 185)">Distance (dissimilarity)</text>
+  <!-- Y-axis ticks -->
+  <line x1="55" y1="80" x2="65" y2="80" stroke="#8C8C8C" stroke-width="1"/>
+  <text x="48" y="84" text-anchor="end" font-size="9" fill="#8C8C8C">High</text>
+  <line x1="55" y1="180" x2="65" y2="180" stroke="#8C8C8C" stroke-width="1"/>
+  <text x="48" y="184" text-anchor="end" font-size="9" fill="#8C8C8C">Med</text>
+  <line x1="55" y1="290" x2="65" y2="290" stroke="#8C8C8C" stroke-width="1"/>
+  <text x="48" y="294" text-anchor="end" font-size="9" fill="#8C8C8C">Low</text>
+
+  <!-- Participants at bottom -->
+  <text x="120" y="325" text-anchor="middle" font-size="10" fill="#A71930">P1</text>
+  <text x="170" y="325" text-anchor="middle" font-size="10" fill="#A71930">P2</text>
+  <text x="230" y="325" text-anchor="middle" font-size="10" fill="#A71930">P5</text>
+  <text x="310" y="325" text-anchor="middle" font-size="10" fill="#4A90D9">P3</text>
+  <text x="370" y="325" text-anchor="middle" font-size="10" fill="#4A90D9">P7</text>
+  <text x="430" y="325" text-anchor="middle" font-size="10" fill="#4A90D9">P4</text>
+  <text x="510" y="325" text-anchor="middle" font-size="10" fill="#5BA55B">P6</text>
+  <text x="570" y="325" text-anchor="middle" font-size="10" fill="#5BA55B">P8</text>
+  <text x="620" y="325" text-anchor="middle" font-size="10" fill="#5BA55B">P9</text>
+
+  <!-- Vertical lines from participants up -->
+  <!-- Cluster A (red): P1, P2, P5 -->
+  <line x1="120" y1="310" x2="120" y2="260" stroke="#A71930" stroke-width="2"/>
+  <line x1="170" y1="310" x2="170" y2="260" stroke="#A71930" stroke-width="2"/>
+  <!-- P1-P2 merge at low distance -->
+  <line x1="120" y1="260" x2="170" y2="260" stroke="#A71930" stroke-width="2"/>
+  <!-- Midpoint up -->
+  <line x1="145" y1="260" x2="145" y2="200" stroke="#A71930" stroke-width="2"/>
+  <!-- P5 up to merge -->
+  <line x1="230" y1="310" x2="230" y2="200" stroke="#A71930" stroke-width="2"/>
+  <!-- P12-P5 merge -->
+  <line x1="145" y1="200" x2="230" y2="200" stroke="#A71930" stroke-width="2"/>
+  <!-- Cluster A midpoint up -->
+  <line x1="187" y1="200" x2="187" y2="100" stroke="#A71930" stroke-width="2"/>
+
+  <!-- Cluster B (blue): P3, P7, P4 -->
+  <line x1="310" y1="310" x2="310" y2="250" stroke="#4A90D9" stroke-width="2"/>
+  <line x1="370" y1="310" x2="370" y2="250" stroke="#4A90D9" stroke-width="2"/>
+  <!-- P3-P7 merge -->
+  <line x1="310" y1="250" x2="370" y2="250" stroke="#4A90D9" stroke-width="2"/>
+  <!-- Midpoint up -->
+  <line x1="340" y1="250" x2="340" y2="190" stroke="#4A90D9" stroke-width="2"/>
+  <!-- P4 up -->
+  <line x1="430" y1="310" x2="430" y2="190" stroke="#4A90D9" stroke-width="2"/>
+  <!-- P37-P4 merge -->
+  <line x1="340" y1="190" x2="430" y2="190" stroke="#4A90D9" stroke-width="2"/>
+  <!-- Cluster B midpoint up -->
+  <line x1="385" y1="190" x2="385" y2="100" stroke="#4A90D9" stroke-width="2"/>
+
+  <!-- Cluster C (green): P6, P8, P9 -->
+  <line x1="510" y1="310" x2="510" y2="270" stroke="#5BA55B" stroke-width="2"/>
+  <line x1="570" y1="310" x2="570" y2="270" stroke="#5BA55B" stroke-width="2"/>
+  <!-- P6-P8 merge -->
+  <line x1="510" y1="270" x2="570" y2="270" stroke="#5BA55B" stroke-width="2"/>
+  <!-- Midpoint up -->
+  <line x1="540" y1="270" x2="540" y2="210" stroke="#5BA55B" stroke-width="2"/>
+  <!-- P9 up -->
+  <line x1="620" y1="310" x2="620" y2="210" stroke="#5BA55B" stroke-width="2"/>
+  <!-- P68-P9 merge -->
+  <line x1="540" y1="210" x2="620" y2="210" stroke="#5BA55B" stroke-width="2"/>
+  <!-- Cluster C midpoint up -->
+  <line x1="580" y1="210" x2="580" y2="80" stroke="#5BA55B" stroke-width="2"/>
+
+  <!-- Top merges (grey — above cut line) -->
+  <!-- Clusters A + B merge -->
+  <line x1="187" y1="100" x2="385" y2="100" stroke="#8C8C8C" stroke-width="2"/>
+  <!-- AB midpoint up -->
+  <line x1="286" y1="100" x2="286" y2="80" stroke="#8C8C8C" stroke-width="2"/>
+  <!-- Final merge AB + C -->
+  <line x1="286" y1="80" x2="580" y2="80" stroke="#8C8C8C" stroke-width="2"/>
+
+  <!-- CUT LINE -->
+  <line x1="70" y1="150" x2="650" y2="150" stroke="#A71930" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="660" y="148" font-size="12" font-weight="700" fill="#A71930">Cut here</text>
+  <text x="660" y="163" font-size="10" fill="#A71930">&#x2192; 3 clusters</text>
+
+  <!-- Cluster labels below -->
+  <rect x="90" y="337" width="170" height="22" rx="6" fill="#A71930" fill-opacity="0.1" stroke="#A71930" stroke-width="1"/>
+  <text x="175" y="353" text-anchor="middle" font-size="10" font-weight="600" fill="#A71930">Cluster A: High distress</text>
+
+  <rect x="280" y="337" width="180" height="22" rx="6" fill="#4A90D9" fill-opacity="0.1" stroke="#4A90D9" stroke-width="1"/>
+  <text x="370" y="353" text-anchor="middle" font-size="10" font-weight="600" fill="#4A90D9">Cluster B: Moderate</text>
+
+  <rect x="480" y="337" width="170" height="22" rx="6" fill="#5BA55B" fill-opacity="0.1" stroke="#5BA55B" stroke-width="1"/>
+  <text x="565" y="353" text-anchor="middle" font-size="10" font-weight="600" fill="#5BA55B">Cluster C: Low distress</text>
+
+  <!-- Bottom annotation -->
+  <text x="350" y="385" text-anchor="middle" font-size="11" fill="#8C8C8C" font-style="italic">Where you cut the tree determines how many clusters you get &#x2014; the dendrogram shows the full hierarchy</text>
+  <text x="350" y="400" text-anchor="middle" font-size="10" fill="#8C8C8C">Advantage: see the structure at every level. Disadvantage: different linkage methods give different trees.</text>
+</svg>
