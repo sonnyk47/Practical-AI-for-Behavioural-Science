@@ -36,7 +36,7 @@ The <a href="https://education.github.com/pack" target="_blank">Student Develope
 4. You may need to upload a photo of your student ID
 5. Approval usually takes a few days
 
-Once approved, you'll have free access to GitHub Copilot Pro — the AI coding assistant you'll use throughout this course.
+Once approved, you'll have free access to GitHub Copilot Pro, the AI coding assistant you'll use throughout this course.
 
 > **MQ student ID rejected?** GitHub sometimes rejects Macquarie University IDs because they don't show an expiry date. If this happens to you, see the **[Student Verification guide](github-student-verification.md)** for how to fix it with a supporting enrolment letter.
 
@@ -94,7 +94,7 @@ The course repo is at: **xkiwilabs/Practical-AI-for-Behavioural-Science**
 
 ## Forking (Optional): Save Your Work to Your Own Repository
 
-You **don't need to fork** for this course — you can just download files. But if you want to keep your work backed up on GitHub, forking is the way to do it.
+You **don't need to fork** for this course; you can just download files. But if you want to keep your work backed up on GitHub, forking is the way to do it.
 
 **A fork is:** A complete copy of the course repo under your own GitHub account. You can edit it, push your changes, and it stays separate from the original course repo (so you can't accidentally overwrite the instructor's files, and vice versa).
 
