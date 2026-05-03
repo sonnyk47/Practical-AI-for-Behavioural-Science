@@ -114,7 +114,7 @@ For privacy-sensitive work or offline use, you can run AI models on your own com
 
 ### Why Run Locally?
 
-When you use ChatGPT or Claude, your prompts are sent to external servers. For coursework, that's fine. But in research — especially with sensitive clinical data, patient records, or proprietary datasets — sending data to external services may violate ethics approvals or data governance policies. Running locally means your data never leaves your machine.
+When you use ChatGPT or Claude, your prompts are sent to external servers. For coursework, that's fine. But in research (especially with sensitive clinical data, patient records, or proprietary datasets), sending data to external services may violate ethics approvals or data governance policies. Running locally means your data never leaves your machine.
 
 ### Tools for Local AI
 
@@ -123,7 +123,7 @@ When you use ChatGPT or Claude, your prompts are sent to external servers. For c
 
 ### What You Can Run
 
-New open-source models are released almost every week — this list was current as of February 2026. Check the <a href="https://ollama.com/library" target="_blank">Ollama model library</a> for the latest, or see our detailed [Ollama guide](ollama-guide.md#recommended-models) for models organised by RAM tier.
+New open-source models are released almost every week. This list was current as of February 2026. Check the <a href="https://ollama.com/library" target="_blank">Ollama model library</a> for the latest, or see our detailed [Ollama guide](ollama-guide.md#recommended-models) for models organised by RAM tier.
 
 - **Qwen 3** — Alibaba's general-purpose and coding models (4B to 235B). Currently among the best open-source models available.
 - **GPT-OSS** — OpenAI's open-weight models (20B and 120B). MoE architecture, Apache 2.0 licence.
@@ -141,7 +141,7 @@ You need **at least 32GB of RAM** to run useful local models, and **64GB or more
 - **Windows/Linux with a dedicated GPU** — NVIDIA GPUs with 12GB+ VRAM can accelerate smaller models. For larger models, system RAM matters more.
 - **Linux (Ubuntu)** — Most AI infrastructure runs on Linux. If you're serious about local models, Ubuntu is the native environment where you'll get the best performance and compatibility.
 
-If your computer has 16GB or less, the cloud tools will give you a much better experience — don't worry about local models.
+If your computer has 16GB or less, the cloud tools will give you a much better experience. Don't worry about local models.
 
 ---
 

@@ -14,7 +14,7 @@ Write a popular science article (maximum 1400 words) about research that uses ma
 
 ## The Core Requirement: Transparent LLM Collaboration
 
-**You are required to use an LLM assistant** (ChatGPT, Claude, Gemini, etc.) throughout this assignment — for literature searching, summarising papers, drafting, editing, and refining.
+**You are required to use an LLM assistant** (ChatGPT, Claude, Gemini, etc.) throughout this assignment, for literature searching, summarising papers, drafting, editing, and refining.
 
 **However,** you must also demonstrate that you:
 
@@ -23,7 +23,7 @@ Write a popular science article (maximum 1400 words) about research that uses ma
 - Made deliberate choices about what to keep, change, or reject
 - Transformed the collaboration into work that is genuinely yours
 
-**You will submit your complete chat history** alongside your article. This is not optional — it is a core part of the assessment.
+**You will submit your complete chat history** alongside your article. This is not optional. It is a core part of the assessment.
 
 ---
 
@@ -45,7 +45,7 @@ Write for an intelligent general audience (e.g., a science-curious friend or a j
 - Describe the ML/AI method in accessible terms (no jargon without explanation)
 - Present the key findings and what they mean
 - Discuss limitations, open questions, or ethical considerations
-- Be engaging — this is popular science, not an academic paper
+- Be engaging; this is popular science, not an academic paper
 
 ### Format
 
@@ -74,7 +74,7 @@ Your chat history should demonstrate:
 - **Critical evaluation:** You questioned LLM outputs, asked for clarification, pushed back on unclear claims
 - **Verification:** You checked facts, confirmed citations exist, validated key claims independently
 - **Iteration:** You refined drafts through multiple rounds, not just copy-paste of the first output
-- **Ownership:** Your voice and judgements shaped the final product — the LLM assisted, you authored
+- **Ownership:** Your voice and judgements shaped the final product. The LLM assisted; you authored
 
 ### What Will Not Earn Credit
 
@@ -120,7 +120,7 @@ Submit **two files** via Turnitin:
 
 ## Academic Integrity
 
-This assignment **requires** LLM use — that is not academic misconduct. What matters is:
+This assignment **requires** LLM use; that is not academic misconduct. What matters is:
 
 - **Transparency:** Your chat history shows exactly how you used the LLM
 - **Verification:** You confirmed that information is accurate
@@ -137,7 +137,7 @@ What constitutes misconduct:
 
 ## Tips for Success
 
-1. **Start early.** Good LLM collaboration takes iteration — you can't do this the night before.
+1. **Start early.** Good LLM collaboration takes iteration, so you can't do this the night before.
 2. **Use the LLM for what it's good at:** Finding papers, explaining concepts, suggesting structure, improving clarity.
 3. **Verify everything:** LLMs hallucinate citations and get facts wrong. Check independently.
 4. **Keep your voice:** Read LLM drafts aloud. If it doesn't sound like you, rewrite it.

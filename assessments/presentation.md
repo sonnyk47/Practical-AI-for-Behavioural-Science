@@ -24,7 +24,7 @@ The paper does **not** need to match the topic of the week you present. You may 
 
 ### Example Methods (not exhaustive)
 
-Below are some ML and AI methods commonly used in psychological and cognitive science research. You are **not limited to this list** — any ML/AI method applied to psychology or cognitive science is welcome. If you're unsure whether your chosen paper is suitable, just check with me.
+Below are some ML and AI methods commonly used in psychological and cognitive science research. You are **not limited to this list**; any ML/AI method applied to psychology or cognitive science is welcome. If you're unsure whether your chosen paper is suitable, just check with me.
 
 - **Supervised learning:** Linear/logistic regression, ridge/lasso regression, decision trees, random forests, gradient boosting, support vector machines
 - **Unsupervised learning:** K-means clustering, hierarchical clustering, DBSCAN, PCA, factor analysis, UMAP, t-SNE
@@ -39,11 +39,11 @@ Below are some ML and AI methods commonly used in psychological and cognitive sc
 ## Presentation Format
 
 - **Duration:** 3 minutes (strictly enforced)
-- **Slides:** Maximum 1 HTML slide built with <a href="https://revealjs.com" target="_blank">reveal.js</a>. You can use **any tools you like** to create it — browser-based chatbots (ChatGPT, Gemini, Claude), VS Code with Copilot, or any other AI assistant. Most chatbots can generate a complete HTML file for you right in the browser. A <a href="../resources/presentation-template/">starter template</a> and <a href="../resources/html-slides-guide.md">step-by-step guide</a> are provided, but they're optional — you're free to design your slide however you like.
+- **Slides:** Maximum 1 HTML slide built with <a href="https://revealjs.com" target="_blank">reveal.js</a>. You can use **any tools you like** to create it, including browser-based chatbots (ChatGPT, Gemini, Claude), VS Code with Copilot, or any other AI assistant. Most chatbots can generate a complete HTML file for you right in the browser. A <a href="../resources/presentation-template/">starter template</a> and <a href="../resources/html-slides-guide.md">step-by-step guide</a> are provided, but they're optional. You're free to design your slide however you like.
 - **Submission (two parts):**
   1. **HTML for presenting:** Put your HTML file, `css/` folder, and any images into a folder named `Lastname_Firstname_WeekN` (e.g., `Smith_Jane_Week4`). Zip the folder and email it to **michael.j.richardson@mq.edu.au** with subject line `PSYC4411 Presentation - Lastname Firstname - Week N`. **Deadline: 12pm (noon) on the Monday of your presentation week.**
   2. **PDF for grading:** Export your slide as a PDF named `Lastname_Firstname_Presentation.pdf` and upload it to the iLearn submission portal **before** your presentation session.
-- **AI disclosure:** At the end of your presentation, you will be given 30 seconds to explain what LLM/chatbot/Gen-AI tools you used to research and prepare your presentation. Be ready to discuss your process — what you asked for, how you refined it, and what you learned. Save your chat histories so you can refer back to them.
+- **AI disclosure:** At the end of your presentation, you will be given 30 seconds to explain what LLM/chatbot/Gen-AI tools you used to research and prepare your presentation. Be ready to discuss your process: what you asked for, how you refined it, and what you learned. Save your chat histories so you can refer back to them.
 
 ---
 
@@ -86,21 +86,21 @@ Your presentation should cover:
 - **Explain methods in plain language.** Assume your audience understands basic concepts but not the specific paper.
 - **Be critical, not dismissive.** A good critique shows you understood the work deeply enough to identify its limits.
 - **Prepare for questions.** Think about what classmates might ask and have brief answers ready.
-- **Use your LLM assistant.** It can help you understand the paper, simplify explanations, and build your HTML slide. That's encouraged — just be transparent about it.
+- **Use your LLM assistant.** It can help you understand the paper, simplify explanations, and build your HTML slide. That's encouraged; just be transparent about it.
 
 ---
 
 ## Creating Your HTML Slide
 
-Your presentation slide is an HTML file built with <a href="https://revealjs.com" target="_blank">reveal.js</a> — the same framework used for the course lecture slides. You can use **any AI tools you like** to build it. Here are some approaches:
+Your presentation slide is an HTML file built with <a href="https://revealjs.com" target="_blank">reveal.js</a>, the same framework used for the course lecture slides. You can use **any AI tools you like** to build it. Here are some approaches:
 
 **Option A: Use a browser chatbot (easiest)**
 1. Open ChatGPT, Gemini, or Claude in your browser
 2. Ask it to create a reveal.js HTML slide for your presentation (see example prompt below)
 3. Copy the HTML code the chatbot gives you into a new text file
 4. Save it as an `.html` file (make sure it ends in `.html`, not `.txt`)
-5. Double-click the file to open it in your browser — you should see your slide
-6. Go back to the chatbot to refine — paste the code back and ask for changes
+5. Double-click the file to open it in your browser. You should see your slide
+6. Go back to the chatbot to refine: paste the code back and ask for changes
 
 **Option B: Use the course template**
 1. Download or copy the <a href="../resources/presentation-template/">presentation template</a>

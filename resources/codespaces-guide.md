@@ -53,7 +53,7 @@ Setting up psyc4411 environment...
 Opening in VS Code...
 ```
 
-**What's happening behind the scenes?** The repo contains a `.devcontainer/devcontainer.json` file that tells GitHub exactly what to install and configure. You don't need to do anything — GitHub detects it automatically and uses it to set up your environment. It's like a recipe that says "install Python 3.12, create the psyc4411 conda environment, add these VS Code extensions," etc. All automatic.
+**What's happening behind the scenes?** The repo contains a `.devcontainer/devcontainer.json` file that tells GitHub exactly what to install and configure. You don't need to do anything; GitHub detects it automatically and uses it to set up your environment. It's like a recipe that says "install Python 3.12, create the psyc4411 conda environment, add these VS Code extensions," etc. All automatic.
 
 When it's done, **VS Code opens in your browser**. You're ready to go.
 
@@ -73,7 +73,7 @@ When you click **Create codespace**, GitHub shows a **Machine type** dropdown. H
 
 ### Just leave it on 2-core
 
-**Important:** The default machine type is **2-core**, and it's completely free for this course. You don't need to select anything — just click "Create codespace" and move on.
+**Important:** The default machine type is **2-core**, and it's completely free for this course. You don't need to select anything. Just click "Create codespace" and move on.
 
 If you see the Machine type dropdown, **leave it set to 2-core**. Don't pick 4-core or 8-core unless you want to pay extra.
 
@@ -98,7 +98,7 @@ You'll only be paying for the time you *actually used* the 4-core machine (charg
 
 ### GPU?
 
-Codespaces doesn't offer GPU in the free tier. For this course, you don't need it — CPU is plenty for the work we're doing. (GPU matters for massive image/video processing or training giant models — not for psychology datasets.)
+Codespaces doesn't offer GPU in the free tier. For this course, you don't need it: CPU is plenty for the work we're doing. (GPU matters for massive image/video processing or training giant models, not for psychology datasets.)
 
 ---
 
@@ -179,9 +179,9 @@ Check how many hours you've used anytime:
 3. Click Code → **Codespaces**
 4. You'll see your codespace listed. Click the **⋯** menu → **Stop codespace**
 
-This **pauses** the codespace. You can resume it anytime — it picks up where you left off. Stopped codespaces don't burn hours.
+This **pauses** the codespace. You can resume it anytime, and it picks up where you left off. Stopped codespaces don't burn hours.
 
-**How long before GitHub auto-stops?** GitHub auto-stops idle codespaces after 30 minutes of inactivity. But don't rely on this — manually stop when you're done.
+**How long before GitHub auto-stops?** GitHub auto-stops idle codespaces after 30 minutes of inactivity. But don't rely on this. Manually stop when you're done.
 
 ---
 
@@ -211,7 +211,7 @@ When I add new materials to the course repository, you can fetch them into your 
 2. Type: `git pull`
 3. Any new files download automatically
 
-You don't need to create a new codespace — just pull the updates into your existing one. This keeps everything synced.
+You don't need to create a new codespace. Just pull the updates into your existing one. This keeps everything synced.
 
 ---
 
@@ -239,7 +239,7 @@ If you created an HTML presentation (e.g., `presentation.html`):
 **Option A: View in Codespaces (built-in preview)**
 1. Right-click the `.html` file in the explorer
 2. Select **Open with Live Server**
-3. A preview window opens to the right — click the link to pop out in a full browser tab
+3. A preview window opens to the right. Click the link to pop out in a full browser tab
 
 **Option B: Download and open locally**
 1. Right-click the `.html` file → **Download**
@@ -257,7 +257,7 @@ Anything you generate (PNG, PDF, CSV files, etc.) is saved in Codespaces. Downlo
 
 ### What about pushing to the course repository?
 
-**You can't push directly to the main course repo** — only the instructor and official collaborators can do that. This prevents accidental overwrites.
+**You can't push directly to the main course repo.** Only the instructor and official collaborators can do that. This prevents accidental overwrites.
 
 **If you want to save your work permanently:**
 - **Option 1:** Keep it in your Codespaces (auto-backed up to GitHub)
@@ -312,7 +312,7 @@ You can still use free AI assistants in Codespaces. Just install them from the V
    - Code in Codespaces on the left, chat with AI on the right
    - Copy code back and forth
 
-**Does this work in Codespaces?** Yes. Codespaces is VS Code, so all the same extensions work. You install them in your Codespaces environment just like you would locally, and they sync to your account.
+**Does this work in Codespaces?** Yes. Codespaces is VS Code, so all the same extensions work. You install them in your Codespaces environment just as you would locally, and they sync to your account.
 
 **Bottom line:** Codespaces works great without Copilot. You'll just use a different (free) AI tool. The 120 free core-hours per month are still yours.
 

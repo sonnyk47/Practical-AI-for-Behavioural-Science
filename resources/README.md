@@ -1,6 +1,6 @@
 # Resources
 
-Guides, references, and templates to help you through PSYC4411. Everything here assumes zero technical background — start wherever you need.
+Guides, references, and templates to help you through PSYC4411. Everything here assumes zero technical background, so start wherever you need.
 
 ---
 

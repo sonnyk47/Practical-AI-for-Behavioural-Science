@@ -1,6 +1,6 @@
 # Assessments
 
-PSYC4411 has three assessment items. Each one builds on the skills you develop through lectures and lab challenges — working with ML/AI methods, communicating findings, and using LLM assistants effectively.
+PSYC4411 has three assessment items. Each one builds on the skills you develop through lectures and lab challenges: working with ML/AI methods, communicating findings, and using LLM assistants effectively.
 
 | Assessment | Weight | Format | Due |
 |------------|--------|--------|-----|
@@ -20,9 +20,9 @@ PSYC4411 has three assessment items. Each one builds on the skills you develop t
 
 ## Key Principles
 
-**LLM use is required, not optional.** You are expected to use AI tools throughout your assessments — for research, coding, drafting, and refining. What matters is *how* you use them: transparently, critically, and with verification.
+**LLM use is required, not optional.** You are expected to use AI tools throughout your assessments, for research, coding, drafting, and refining. What matters is *how* you use them: transparently, critically, and with verification.
 
-**Same paper for presentation and written assignment.** Choose a paper you find genuinely interesting — you'll work with it throughout the semester.
+**Same paper for presentation and written assignment.** Choose a paper you find genuinely interesting, because you'll work with it throughout the semester.
 
 **AI disclosure.** Include an AI disclosure statement with all submitted work. See the [AI Disclosure Template](../README.md#ai-disclosure-template) in the course overview.
 

@@ -1,6 +1,6 @@
 # Getting Started — PSYC4411 Setup Guide
 
-**Please complete these steps before Week 2.** The first part of the Week 2 class will be dedicated to troubleshooting any issues, so don't worry if you get stuck — bring your laptop and we'll sort it out together.
+**Please complete these steps before Week 2.** The first part of the Week 2 class will be dedicated to troubleshooting any issues, so don't worry if you get stuck. Bring your laptop and we'll sort it out together.
 
 Everything you need for this course is **free**. This guide assumes you've never installed programming tools before, so we'll walk through every step.
 
@@ -19,7 +19,7 @@ Here's what you'll set up:
 
 ## Step 1: Create a GitHub Account
 
-GitHub is where developers (and increasingly, researchers) store and share code. You'll need an account to access free student tools, including GitHub Copilot — an AI coding assistant that works inside VS Code.
+GitHub is where developers (and increasingly, researchers) store and share code. You'll need an account to access free student tools, including GitHub Copilot, an AI coding assistant that works inside VS Code.
 
 1. Go to [github.com](https://github.com) and click **Sign up**
 2. **Use a personal email address** (Gmail, Outlook, etc.) — not your Macquarie email. Why? Your MQ email will stop working after you graduate, but your GitHub account will be useful for years to come.
@@ -44,7 +44,7 @@ VS Code (Visual Studio Code) is a free text editor made by Microsoft. It's where
 ### macOS
 
 1. Go to [code.visualstudio.com](https://code.visualstudio.com) and click the download button for Mac
-2. Open the downloaded `.zip` file — it will unzip into an application called **Visual Studio Code**
+2. Open the downloaded `.zip` file; it will unzip into an application called **Visual Studio Code**
 3. Drag **Visual Studio Code** into your **Applications** folder
 4. Open it from Applications (you may need to right-click → Open the first time, then click "Open" on the security dialog)
 
@@ -59,7 +59,7 @@ VS Code (Visual Studio Code) is a free text editor made by Microsoft. It's where
 
 ### First Launch
 
-When you open VS Code for the first time, you'll see a Welcome tab. Feel free to explore it, or close it — we'll set up the important bits in Step 6.
+When you open VS Code for the first time, you'll see a Welcome tab. Feel free to explore it, or close it. We'll set up the important bits in Step 6.
 
 ---
 
@@ -80,7 +80,7 @@ Homebrew is a package manager for Mac — think of it as an app store you use fr
    ```
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
-3. Follow the prompts (you'll need to enter your Mac password). **Important:** When Homebrew finishes, it may display a "Next steps" message with commands to add Homebrew to your PATH — run those commands.
+3. Follow the prompts (you'll need to enter your Mac password). **Important:** When Homebrew finishes, it may display a "Next steps" message with commands to add Homebrew to your PATH. Run those commands.
 4. Once Homebrew is installed, install Git:
    ```
    brew install git
@@ -94,7 +94,7 @@ Homebrew is a package manager for Mac — think of it as an app store you use fr
    ```
    git --version
    ```
-2. If Git isn't installed, macOS will pop up a dialog asking to install **Command Line Developer Tools** — click **Install**
+2. If Git isn't installed, macOS will pop up a dialog asking to install **Command Line Developer Tools**. Click **Install**
 3. Wait for the download and installation to finish (this can take a few minutes)
 
 **Verify it worked:** In Terminal, type:
@@ -107,7 +107,7 @@ You should see something like `git version 2.x.x`.
 
 1. Go to <a href="https://git-scm.com" target="_blank">git-scm.com</a> and click **Download for Windows**
 2. Run the downloaded installer
-3. Use the default settings — click **Next** through each screen. The defaults are fine for this course.
+3. Use the default settings. Click **Next** through each screen; the defaults are fine for this course.
 4. Click **Install**, then **Finish**
 5. **Close and reopen VS Code** (or PowerShell) after installation so it can detect Git
 
@@ -153,15 +153,15 @@ Any new or updated files will be downloaded automatically. We'll remind you to p
 
 ## Step 5: Install Miniconda
 
-Miniconda is a lightweight installer that gives you Python and **conda** — a tool for managing packages and environments. An environment is a self-contained set of packages that keeps your course tools separate from everything else on your computer, so nothing gets mixed up.
+Miniconda is a lightweight installer that gives you Python and **conda**, a tool for managing packages and environments. An environment is a self-contained set of packages that keeps your course tools separate from everything else on your computer, so nothing gets mixed up.
 
-> **Already have Anaconda or Miniconda installed?** You can skip this step entirely — go straight to Step 6. Anaconda includes everything Miniconda does (and more). The site makes it hard to find miniconda, as they try and push you to install Anaconda. The link might be at the bottom of the page. 
+> **Already have Anaconda or Miniconda installed?** You can skip this step entirely. Go straight to Step 6. Anaconda includes everything Miniconda does (and more). The site makes it hard to find miniconda, as they try and push you to install Anaconda. The link might be at the bottom of the page. 
 
 ### macOS
 
 1. Go to the [Miniconda download page](https://docs.anaconda.com/miniconda/) and download the **macOS installer** (choose the graphical installer)
 2. Open the downloaded graphical installer and follow the installer prompts (click Continue, Agree, Install)
-3. When the installer finishes, **close and reopen Terminal** — this is important so your terminal knows where to find conda
+3. When the installer finishes, **close and reopen Terminal**. This is important so your terminal knows where to find conda
 
 **Verify it worked:** Open **Terminal** (search for "Terminal" in Spotlight, or find it in Applications → Utilities) and type:
 
@@ -185,7 +185,7 @@ You should see something like `conda 24.x.x`. If you see "command not found", tr
 conda --version
 ```
 
-You should see something like `conda 24.x.x`. If you get an error, make sure you checked the "Add to PATH" box during installation — if you missed it, uninstall Miniconda and reinstall with that box checked.
+You should see something like `conda 24.x.x`. If you get an error, make sure you checked the "Add to PATH" box during installation. If you missed it, uninstall Miniconda and reinstall with that box checked.
 
 ---
 
@@ -194,7 +194,7 @@ You should see something like `conda 24.x.x`. If you get an error, make sure you
 Extensions add extra features to VS Code. You need three (and one optional but highly recommended one):
 
 1. Open VS Code
-2. Click the **Extensions** icon in the left sidebar (it looks like four squares, with one slightly detached) — or press `Ctrl+Shift+X` (Windows) / `Cmd+Shift+X` (Mac)
+2. Click the **Extensions** icon in the left sidebar (it looks like four squares, with one slightly detached), or press `Ctrl+Shift+X` (Windows) / `Cmd+Shift+X` (Mac)
 3. Search for and install each of these:
 
 | Extension | Publisher | What it does |
@@ -212,16 +212,16 @@ For each one: type the name in the search bar, find the one by the correct publi
 This step connects VS Code to your GitHub account. It enables Copilot, syncs your settings across devices, and lets you access repositories from within VS Code.
 
 1. Click the **Accounts** icon in the bottom-left corner of VS Code (it looks like a person silhouette)
-2. Click **Sign in with GitHub to use GitHub Copilot** (or **Turn on Cloud Changes** — either works to start the sign-in flow)
-3. A browser window will open asking you to authorise VS Code to access your GitHub account — click **Authorize**
+2. Click **Sign in with GitHub to use GitHub Copilot** (or **Turn on Cloud Changes**; either works to start the sign-in flow)
+3. A browser window will open asking you to authorise VS Code to access your GitHub account. Click **Authorize**
 4. You'll be redirected back to VS Code. You should now see your GitHub username in the bottom-left corner.
 
 Once signed in, three things happen automatically:
-- **GitHub Copilot** activates (if your Student Developer Pack has been approved — you'll see a small Copilot icon in the bottom status bar)
+- **GitHub Copilot** activates (if your Student Developer Pack has been approved; you'll see a small Copilot icon in the bottom status bar)
 - **Settings Sync** turns on, so your VS Code setup (extensions, themes, keybindings) is backed up to your GitHub account and follows you across devices
 - **Git integration** connects, so you can push/pull code to GitHub directly from VS Code later in the course
 
-If your Student Developer Pack hasn't been approved yet, Copilot won't activate — that's fine, everything else still works. Come back to check once you get the approval email.
+If your Student Developer Pack hasn't been approved yet, Copilot won't activate. That's fine; everything else still works. Come back to check once you get the approval email.
 
 ---
 
@@ -234,7 +234,7 @@ This is where the magic happens. We've written a script that automatically:
 
 You should still have the course repository open in VS Code from Step 4. If not, open VS Code and go to **File → Open Folder** and select the course repository folder.
 
-1. Open the **terminal inside VS Code**: go to **View → Terminal** (or press `` Ctrl+` `` — that's the backtick key, usually below Escape)
+1. Open the **terminal inside VS Code**: go to **View → Terminal** (or press `` Ctrl+` ``, the backtick key usually below Escape)
 2. **Windows only:** You may need to allow scripts to run (this is a one-time security setting). Type:
    ```
    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -260,19 +260,19 @@ You should still have the course repository open in VS Code from Step 4. If not,
 
 ## Step 8: Test Your Setup
 
-Let's make sure everything works together. There are two ways to test — a notebook test and a script test.
+Let's make sure everything works together. There are two ways to test: a notebook test and a script test.
 
 ### Test 1: Notebook (test-setup.ipynb)
 
 1. Open VS Code and open the course repository folder (if it's not already open from Step 4, go to **File → Open Folder** and select `Practical-AI-for-Behavioural-Science`)
 2. Navigate to `setup/test-setup.ipynb` in the file explorer on the left and click to open it
-4. **Select the right kernel:** When the notebook opens, look at the top right corner of the notebook. You should see a kernel selector — click it and choose **PSYC4411** from the list. If you don't see it, try selecting "Python Environments" and look for `psyc4411 (conda)`.
+4. **Select the right kernel:** When the notebook opens, look at the top right corner of the notebook. You should see a kernel selector. Click it and choose **PSYC4411** from the list. If you don't see it, try selecting "Python Environments" and look for `psyc4411 (conda)`.
 5. Click **Run All** (the double-play button at the top of the notebook) or run each cell one at a time with `Shift + Enter`
-6. If you see library version numbers and a scatter plot, followed by "Setup complete!" — you're done with this test!
+6. If you see library version numbers and a scatter plot, followed by "Setup complete!", you're done with this test!
 
 ### Test 2: Python script (test-setup.py)
 
-This test runs as a Python script in the terminal — good practice for running code outside of a notebook.
+This test runs as a Python script in the terminal, which is good practice for running code outside of a notebook.
 
 1. Open a terminal (in VS Code: View → Terminal, or use the macOS Terminal / Windows PowerShell)
 2. Activate the course environment:
@@ -288,7 +288,7 @@ This test runs as a Python script in the terminal — good practice for running 
    ```
    python test-setup.py
    ```
-5. If you see "All checks passed!" — your setup is complete!
+5. If you see "All checks passed!", your setup is complete!
 
 **If the PSYC4411 kernel doesn't appear in VS Code:** Close VS Code completely, reopen it, and try again. Sometimes VS Code needs a restart to detect newly created environments.
 
@@ -303,7 +303,7 @@ Throughout this course, you'll use AI assistants to help write code, debug error
 These tools have free tiers that are more than enough for this course:
 
 - **ChatGPT** — [chat.openai.com](https://chat.openai.com)
-  General-purpose AI assistant. Great for explaining concepts and helping with code. The free tier includes GPT-4o mini. Also has a **Deep Research** mode that can autonomously investigate topics across many sources — like having a research assistant that reads dozens of papers for you.
+  General-purpose AI assistant. Great for explaining concepts and helping with code. The free tier includes GPT-4o mini. Also has a **Deep Research** mode that can autonomously investigate topics across many sources, like having a research assistant that reads dozens of papers for you.
 
 - **Claude** — [claude.ai](https://claude.ai)
   Another excellent AI assistant with a free tier. Particularly good at careful, detailed explanations and working through long pieces of code.
@@ -344,20 +344,20 @@ These tools are built specifically for academic research:
 
 ### What About Deep Research?
 
-Both ChatGPT and Gemini now offer **Deep Research** modes that go beyond a quick chat response. When you use Deep Research, the AI will autonomously search, read, and synthesise information across many sources — spending several minutes investigating your question thoroughly. This is incredibly useful for:
+Both ChatGPT and Gemini now offer **Deep Research** modes that go beyond a quick chat response. When you use Deep Research, the AI will autonomously search, read, and synthesise information across many sources, spending several minutes investigating your question thoroughly. This is incredibly useful for:
 - Understanding a new topic from multiple angles
 - Literature reviews and finding relevant papers
 - Exploring how a method has been used across different research areas
 
 ### Our Recommendation
 
-Set up **GitHub Copilot in VS Code** (for in-line code help while you work) plus keep a browser tab open with **ChatGPT or Claude** (for longer explanations, debugging help, and concept questions). Try different tools throughout the semester — each has different strengths, and part of becoming a skilled researcher is learning which tool works best for which task.
+Set up **GitHub Copilot in VS Code** (for in-line code help while you work) plus keep a browser tab open with **ChatGPT or Claude** (for longer explanations, debugging help, and concept questions). Try different tools throughout the semester; each has different strengths, and part of becoming a skilled researcher is learning which tool works best for which task.
 
 ---
 
 ## Optional: Set Up API Keys for Programmatic Access
 
-The AI assistants above all work through their websites and VS Code extensions — you don't need API keys for normal use in this course. However, if you want to call AI models directly from Python code (e.g., for text analysis, embeddings, or automated tasks in later weeks), you can set up API keys.
+The AI assistants above all work through their websites and VS Code extensions; you don't need API keys for normal use in this course. However, if you want to call AI models directly from Python code (e.g., for text analysis, embeddings, or automated tasks in later weeks), you can set up API keys.
 
 **Why you might want this:** In Weeks 9–11, we'll work with embeddings and programmatic AI access. Having API keys ready means you can run code that calls these models directly, rather than copying and pasting between a chat window and your notebook.
 
@@ -389,9 +389,9 @@ The AI assistants above all work through their websites and VS Code extensions �
    }
    ```
 
-3. **Replace the placeholder values** with your actual API keys. You don't need all three — just add the ones you have. Most providers offer free tiers with limited usage that is more than enough for this course.
+3. **Replace the placeholder values** with your actual API keys. You don't need all three; just add the ones you have. Most providers offer free tiers with limited usage that is more than enough for this course.
 
-4. **Make sure `.secrets/` is in your `.gitignore`** so your keys are never pushed to GitHub. The course repo already includes this — but if you're working in your own repo, add this line to your `.gitignore`:
+4. **Make sure `.secrets/` is in your `.gitignore`** so your keys are never pushed to GitHub. The course repo already includes this, but if you're working in your own repo, add this line to your `.gitignore`:
    ```
    .secrets/
    ```
@@ -425,7 +425,7 @@ We'll provide starter code for this when we get to the relevant weeks. You don't
 
 ## Optional: Install Local AI Models
 
-> **Only do this if your computer has 32GB of RAM or more.** If you're not sure, skip this step — the cloud-based AI tools above are more than enough for this course.
+> **Only do this if your computer has 32GB of RAM or more.** If you're not sure, skip this step; the cloud-based AI tools above are more than enough for this course.
 
 Later in the semester, we'll explore running AI models directly on your own computer. This is useful in research when you're working with sensitive data that can't be sent to external servers, or when you want to experiment without usage limits. If you have capable hardware, you can set this up now.
 
@@ -442,7 +442,7 @@ Later in the semester, we'll explore running AI models directly on your own comp
 - **Windows/Linux users** with an **NVIDIA GPU** (12GB+ VRAM) — GPU acceleration helps a lot
 - **Linux (Ubuntu) users** — Linux is the default OS for AI/ML work and is where these tools run best. If you're already on Ubuntu, you'll have a great experience.
 
-If your computer has 16GB of RAM or less, local models won't run well and you'll have a better experience with the cloud tools. No need to install anything — you won't be at any disadvantage in this course.
+If your computer has 16GB of RAM or less, local models won't run well and you'll have a better experience with the cloud tools. No need to install anything. You won't be at any disadvantage in this course.
 
 ---
 
@@ -455,9 +455,9 @@ If your computer has 16GB of RAM or less, local models won't run well and you'll
 | "conda not found" or "conda is not recognised" | Miniconda isn't installed or isn't in your PATH. Reinstall from [docs.anaconda.com/miniconda](https://docs.anaconda.com/miniconda/). On Windows, make sure to check "Add to PATH". On Mac, close and reopen Terminal after installing. |
 | Setup script fails with "permission denied" | **Mac:** Make sure you're using `bash setup-mac.sh` (not `./setup-mac.sh`). **Windows:** Run the ExecutionPolicy command from Step 7. |
 | `InvalidArchiveError` during setup | A downloaded package file is corrupted. Run `conda clean --packages --tarballs -y` then re-run the setup script. (The updated setup scripts do this automatically, but if you're seeing it in the output, running the clean command manually and retrying is the fix.) |
-| `EnvironmentLocationNotFound` errors | The `psyc4411` environment doesn't exist — it likely wasn't created successfully. Re-run the setup script. If it fails again, try `conda clean --all -y` first, then re-run the script. |
+| `EnvironmentLocationNotFound` errors | The `psyc4411` environment doesn't exist; it likely wasn't created successfully. Re-run the setup script. If it fails again, try `conda clean --all -y` first, then re-run the script. |
 | Setup script said "SETUP FAILED" | Follow the remediation steps it printed. Usually: run `conda clean --packages --tarballs -y`, then re-run the setup script. If that doesn't work, try `conda clean --all -y` and re-run. |
-| Using Anaconda instead of Miniconda | That's completely fine — Anaconda includes everything Miniconda does. If you hit package errors, run `conda clean --packages --tarballs -y` before re-running setup. Anaconda's larger package cache is occasionally prone to corruption, and this clears it. |
+| Using Anaconda instead of Miniconda | That's completely fine. Anaconda includes everything Miniconda does. If you hit package errors, run `conda clean --packages --tarballs -y` before re-running setup. Anaconda's larger package cache is occasionally prone to corruption, and this clears it. |
 | VS Code doesn't show the PSYC4411 kernel | Close and reopen VS Code. If still missing, open a terminal and run: `conda run -n psyc4411 python -m ipykernel install --user --name=psyc4411 --display-name="PSYC4411"` |
 | Packages fail to install (network error) | Check your internet connection. If on campus, try switching between WiFi and a personal hotspot. |
 | "ModuleNotFoundError" when running the test notebook | You're using the wrong Python environment. Make sure to select the **PSYC4411** kernel in the top-right of the notebook. |
@@ -466,7 +466,7 @@ If your computer has 16GB of RAM or less, local models won't run well and you'll
 
 **Tip:** If you hit an error during setup, try pasting the full error message into **Copilot Chat**, **ChatGPT**, or **Claude**. AI assistants are great at diagnosing installation errors, package conflicts, and environment problems. Just say something like: *"I'm trying to set up Python for a university course and I got this error:"* and paste the error.
 
-**Still stuck?** Bring your laptop to the Week 2 class and we'll help you get sorted. You can also post a question in the iLearn discussion forum — chances are someone else hit the same issue.
+**Still stuck?** Bring your laptop to the Week 2 class and we'll help you get sorted. You can also post a question in the iLearn discussion forum; chances are someone else hit the same issue.
 
 ---
 

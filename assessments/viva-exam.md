@@ -6,7 +6,7 @@
 
 ## Overview
 
-This is an in-person exam — no exceptions. The exam will be administered and graded by Prof. Richardson. It covers all material presented in Weeks 1 to 11 and is composed of three sections.
+This is an in-person exam, no exceptions. The exam will be administered and graded by Prof. Richardson. It covers all material presented in Weeks 1 to 11 and is composed of three sections.
 
 ---
 
@@ -75,7 +75,7 @@ Immediately following your elevator pitch (30 seconds), briefly describe:
 - What you verified, changed, or rejected from the LLM's suggestions
 - How you made the proposal your own
 
-This reflection is not separately graded but informs your Innovation score — effective, critical use of LLM tools demonstrates sophisticated engagement with course concepts.
+This reflection is not separately graded but informs your Innovation score. Effective, critical use of LLM tools demonstrates sophisticated engagement with course concepts.
 
 ---
 
@@ -85,7 +85,7 @@ This reflection is not separately graded but informs your Innovation score — e
 
 - Review key terms from each week's lecture
 - Practise giving concise, accurate definitions aloud
-- Focus on precision — one good sentence is better than rambling
+- Focus on precision; one good sentence is better than rambling
 
 ### For Short Answer Questions
 
@@ -96,7 +96,7 @@ This reflection is not separately graded but informs your Innovation score — e
 ### For the Study Proposal
 
 - Choose a research question that genuinely interests you
-- Match methods to the question — don't force a method where it doesn't fit
+- Match methods to the question; don't force a method where it doesn't fit
 - Practise delivering in under 2 minutes without notes
 - Think about what could go wrong (shows critical understanding)
 - Use an LLM to help develop and refine your idea, but make it yours

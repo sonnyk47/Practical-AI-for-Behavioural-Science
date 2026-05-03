@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 380" font-family="Inter, -apple-system, sans-serif">
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" font-size="16" font-weight="700" fill="#2D2D2D">PCA: Finding the Axes That Capture the Most Variation</text>
+
+  <!-- Left panel: original data cloud -->
+  <rect x="20" y="45" width="280" height="260" rx="10" fill="#F8F8F8" stroke="#D0D0D0" stroke-width="1"/>
+  <text x="160" y="68" text-anchor="middle" font-size="13" font-weight="600" fill="#4A90D9">Original Data (42 dimensions)</text>
+  <text x="160" y="84" text-anchor="middle" font-size="10" fill="#8C8C8C">Each dot is a person; each axis is a questionnaire item</text>
+
+  <!-- Scattered points in original space -->
+  <circle cx="90" cy="170" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="115" cy="145" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="130" cy="200" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="148" cy="160" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="165" cy="180" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="140" cy="130" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="185" cy="150" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="170" cy="210" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="200" cy="170" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="210" cy="195" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="110" cy="190" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="230" cy="155" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="155" cy="225" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="195" cy="140" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="125" cy="165" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="180" cy="120" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="220" cy="180" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+  <circle cx="100" cy="205" r="4" fill="#4A90D9" fill-opacity="0.4"/>
+
+  <!-- Axes in original space -->
+  <line x1="60" y1="280" x2="280" y2="280" stroke="#8C8C8C" stroke-width="1"/>
+  <line x1="60" y1="280" x2="60" y2="100" stroke="#8C8C8C" stroke-width="1"/>
+  <text x="170" y="297" text-anchor="middle" font-size="10" fill="#8C8C8C">Item 1 (e.g., DASS Q1)</text>
+  <text x="50" y="190" text-anchor="middle" font-size="10" fill="#8C8C8C" transform="rotate(-90, 50, 190)">Item 2 (e.g., DASS Q2)</text>
+
+  <!-- Arrow between panels -->
+  <line x1="310" y1="175" x2="370" y2="175" stroke="#A71930" stroke-width="2.5" marker-end="url(#arrow-pca)"/>
+  <text x="340" y="165" text-anchor="middle" font-size="11" font-weight="600" fill="#A71930">PCA</text>
+  <text x="340" y="195" text-anchor="middle" font-size="9" fill="#8C8C8C">Rotate to find</text>
+  <text x="340" y="207" text-anchor="middle" font-size="9" fill="#8C8C8C">best angles</text>
+
+  <defs>
+    <marker id="arrow-pca" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#A71930"/>
+    </marker>
+  </defs>
+
+  <!-- Right panel: PCA space -->
+  <rect x="380" y="45" width="350" height="260" rx="10" fill="#F8F8F8" stroke="#D0D0D0" stroke-width="1"/>
+  <text x="555" y="68" text-anchor="middle" font-size="13" font-weight="600" fill="#A71930">PCA Space (2 components)</text>
+  <text x="555" y="84" text-anchor="middle" font-size="10" fill="#8C8C8C">Same people, but now on the axes that matter most</text>
+
+  <!-- PC1 axis (horizontal, longest) -->
+  <line x1="400" y1="210" x2="710" y2="210" stroke="#A71930" stroke-width="2"/>
+  <text x="555" y="227" text-anchor="middle" font-size="10" font-weight="600" fill="#A71930">PC1: General Distress (45% of variance)</text>
+
+  <!-- PC2 axis (vertical, shorter) -->
+  <line x1="555" y1="95" x2="555" y2="280" stroke="#C8972C" stroke-width="2"/>
+  <text x="685" y="100" text-anchor="middle" font-size="10" font-weight="600" fill="#C8972C">PC2 (7%)</text>
+
+  <!-- Projected points (elongated along PC1) -->
+  <circle cx="430" cy="195" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="450" cy="175" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="465" cy="210" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="485" cy="190" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="500" cy="205" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="520" cy="170" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="535" cy="200" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="550" cy="180" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="570" cy="195" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="585" cy="215" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="600" cy="185" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="615" cy="200" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="635" cy="175" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="650" cy="195" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="670" cy="165" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="690" cy="190" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="440" cy="220" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+  <circle cx="475" cy="165" r="4" fill="#4A90D9" fill-opacity="0.6"/>
+
+  <!-- Variance explained bar -->
+  <rect x="400" y="250" width="186" height="16" rx="4" fill="#A71930" fill-opacity="0.3"/>
+  <text x="493" y="262" text-anchor="middle" font-size="9" font-weight="600" fill="#A71930">PC1: 45%</text>
+  <rect x="590" y="250" width="29" height="16" rx="4" fill="#C8972C" fill-opacity="0.3"/>
+  <text x="604" y="262" text-anchor="middle" font-size="9" font-weight="600" fill="#C8972C">7%</text>
+  <rect x="623" y="250" width="16" height="16" rx="4" fill="#5BA55B" fill-opacity="0.3"/>
+  <text x="631" y="262" text-anchor="middle" font-size="8" font-weight="600" fill="#5BA55B">4%</text>
+  <rect x="643" y="250" width="67" height="16" rx="4" fill="#D0D0D0" fill-opacity="0.3"/>
+  <text x="676" y="262" text-anchor="middle" font-size="9" fill="#8C8C8C">rest</text>
+  <text x="555" y="280" text-anchor="middle" font-size="9" fill="#8C8C8C">Variance captured by each component</text>
+
+  <!-- Bottom annotation -->
+  <text x="375" y="330" text-anchor="middle" font-size="12" fill="#2D2D2D" font-style="italic">42 questionnaire items &#x2192; 3 components capture ~56% of all variation</text>
+  <text x="375" y="350" text-anchor="middle" font-size="11" fill="#8C8C8C">PCA doesn't discard data &#x2014; it finds a simpler view that preserves the most important patterns</text>
+  <text x="375" y="370" text-anchor="middle" font-size="11" fill="#8C8C8C">Like photographing a sculpture from its most informative angles</text>
+</svg>
